@@ -1,0 +1,49 @@
+@import "../../../../Sass/variables";
+
+
+.avatar-block{
+    list-style-type: none;
+    @include set-margin($bottom: 0px);
+    @include set-padding-all($padding: 0px);
+    @include set-flex($direction: row, $justify-content: space-between, $align-items: center);
+  	.avatar-item{
+      //@include set-background($color: $primary-color);
+      @include set-border-all ($border: 1.5px, $radius: 50px, $color: $gray-dark);
+      @include set-font($size: 12px, $weight: 100, $color: $text-primary);
+      @include set-dimensions($width: 40px, $height:40px);
+      @include adjust-text($over-flow: hidden, $alignment: center, $line-height: 20px);
+      display: block;
+		  transition: margin 0.1s ease-in-out;
+		  @include set-margin($left: -20px);
+    &:first-child {
+      z-index: 5;
+    }
+    &:nth-child(2) {
+      z-index: 4;
+    }
+    &:nth-child(3) {
+      z-index: 3;
+    }
+    &:nth-child(4) {
+      z-index: 2;
+    }
+		&:nth-child(5) {
+      z-index: 1;
+    }
+    &:last-child {z-index: 0}
+    img{
+      width:100%; 
+      border-radius: 50px;
+      border:2px solid;
+      border-color: $gray;
+      background-color: #f9f9f9; 
+    }
+	}
+	&:hover {
+    .avatar-item {
+      @include set-margin($right: 10px);
+      
+    }
+	}
+
+}

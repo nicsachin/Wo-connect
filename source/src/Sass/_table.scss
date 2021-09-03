@@ -1,0 +1,232 @@
+@import "colors";
+@import "mixins";
+@import "typography";
+
+/*================================
+      DATATABLE
+  ==================================*/
+// Table Filter
+.table-filters {
+    @include set-flex( $justify-content: space-between, $align-items: center, $align-self: center);
+    @include set-margin($bottom: 20px);
+    .grouped-filter {
+        @include set-flex($align-items: center);
+        display: inline-flex;
+        @include set-border($radius: 6px);
+        @include set-padding($top: 6px, $bottom: 6px, $right:10px, $left: 10px);
+        @include set-background($color: $off-white);
+        select {
+            border: 1px solid $gray-dark;
+        }
+
+        .filter-btn {
+            margin-bottom: 0px;
+
+            li {
+                position: relative;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                border: none;
+                border-radius: 50%;
+                height: 30px;
+                width: 30px;
+                line-height: 2;
+                text-align: center;
+                cursor: pointer;
+                @include set-transition(all 0.3s);
+                color: rgba(0, 0, 0, 0.54);
+                fill: rgba(0, 0, 0, 0.54);
+                background-color: transparent;
+
+                &:hover {
+                    background-color: $form-bg-color;
+                }
+
+                svg {
+                    cursor: pointer;
+                    width: 18px;
+                    height: auto;
+                }
+                &.active-green{
+                    svg{
+                        path{
+                            fill: $green-success;
+                        }
+                    }
+                }
+                &.Inactive-red{
+                    svg{
+                        path{
+                            fill: $red-failure;
+                        }
+                    }
+                }
+            }
+        }
+
+        button,
+        a {
+            margin-right: 10px;
+        }
+    }
+}
+
+
+
+// Table
+#table-content {
+    .rdt_Table{
+        @include set-background($color: transparent);
+    }
+    & .rdt_TableHeadRow {
+        @include set-background($color: $pure-white);
+        min-height: 50px;
+        border-width: 8px;
+        border-bottom-color: #f9f9f9;
+
+        
+    }
+
+    & .rdt_TableHeader {
+        display: none;
+    }
+
+    .eHxVgR {
+        border: 0px;
+        background: $off-white;
+    }
+
+    .rdt_TableHead {
+        @include set-border($radius: 5px);
+    }
+
+    .rdt_TableCol{
+        @include set-font($size: 14px, $weight: 500, $color: $text-other);
+        text-transform: uppercase;
+    }
+
+    .rdt_TableRow {
+        padding: 10px 0;
+
+        &:hover {
+            background: $off-white;
+        }
+    }
+    .rdt_TableBody{
+        @include set-background($color: $pure-white);
+    }
+    .rdt_TableCell {
+         @include set-font($size: 14px, $weight: 400, $color: $text-primary);
+        .filter-btn {
+            margin-bottom: 0;
+
+            li {
+                position: relative;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                border: none;
+                border-radius: 50%;
+                height: 30px;
+                width: 30px;
+                line-height: 2.1;
+                text-align: center;
+                cursor: pointer;
+                @include set-transition(all 0.3s);
+                color: rgba(0, 0, 0, 0.54);
+                fill: rgba(0, 0, 0, 0.54);
+                background-color: transparent;
+
+                &:hover {
+                    background-color: $form-bg-color;
+                }
+
+                svg {
+                    width: 15px;
+                    height: auto;
+                    cursor: pointer;
+                }
+            }
+        }
+        .user-panel{
+            .user-img{
+                width: 30px;
+                height: 30px;
+                img{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+
+    .rdt_Pagination {
+        border-top: 0px;
+
+        .dQdisw {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            margin: 6px;
+            text-align: center;
+            border: 0px;
+            background-color: $off-white;
+            border-radius: 4px;
+        }
+    }
+
+}
+// Tabs filter
+.filter-tabs{
+    @include set-flex($justify-content: flex-end, $align-items: center, $align-self: center); 
+}
+
+.filter-block{
+    display: flex;
+    align-items: center;
+}
+
+/* Screen Size - 592px */
+@media (max-width: 592px) {
+    .grouped-filter {
+      form {
+        justify-content: center;
+      }
+
+      button,
+      a,
+      .filter-btn {
+        margin-bottom: 0px;
+        margin-right: 10px;
+      }
+
+      select {
+        width: 25%;
+      }
+    }
+}
+
+/* Screen Size - 425px */
+@media (max-width: 425px) {
+    .table-filters{
+        .grouped-filter{
+        justify-content: space-between;
+        width: 100%;
+            .filter-btn{
+                margin-top: 0px;
+                margin-right: 0px;
+            }
+        }
+    }
+    
+  .table-filters {
+      display: block;
+    }
+    .filter-btn{
+     margin-top: 20px;
+    }
+}
+    

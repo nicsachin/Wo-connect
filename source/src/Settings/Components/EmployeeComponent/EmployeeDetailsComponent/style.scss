@@ -1,0 +1,29 @@
+@import "../../../../Main";
+.user-panel{
+    .user-img{
+        width: 60px;
+        height: auto;
+        border-radius: 50px;
+        border: 1px solid $primary-color;
+    }
+    .user-info{
+        ul{
+            li{
+                margin-bottom: 5px;
+            }
+        } 
+    } 
+}
+.element-content-wrapper{
+    margin-bottom: 25px;
+    @include set-flex($justify-content: space-between, $align-items: center);
+}
+
+.element-img-block{
+    border: 1px solid #eee;
+    background-color: $gray;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    @include set-flex($justify-content: center, $align-items: center);
+}

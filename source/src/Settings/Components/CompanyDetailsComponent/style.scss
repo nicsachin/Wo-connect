@@ -1,0 +1,58 @@
+@import "../../../Sass/variables";
+
+.profile-block{
+    max-width: 600px;
+    .img-block{
+        background-color: $primary-extra-light-focused;
+        width: 90px;
+        height: 90px;
+        overflow: hidden;
+        border-radius: 50px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        .hover{
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            right: 0;
+            background-color: #B4C8FF;
+            width: 100%;
+            height: 30px;
+            line-height: 2;
+            text-align: center;
+            cursor: pointer;
+            opacity: 0;
+            label{
+                margin-bottom: 0;
+                line-height: 1;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+        &:hover{
+            .hover{
+                opacity: 1;
+            }
+        }
+        .import-block{
+            margin: 0px 0;
+            input[type="file"]{
+                bottom: 0px;
+            }
+        }
+    }
+    .content-block{
+        margin-left: 20px;
+        .title{
+            font-size: 26px;
+            font-weight: 500;
+        }
+        .sub-title{
+            font-weight: 400;
+        }
+    }
+}

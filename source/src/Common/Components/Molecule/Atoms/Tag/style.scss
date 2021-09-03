@@ -1,0 +1,74 @@
+@import "../../../../../Sass/variables";
+
+.tag-block {
+  @include set-border($radius: 4px);
+  @include set-dimensions($width: fir-content, $height: auto);
+  @include set-margin($right: 5px);
+  @include set-font($size: 12px);
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+.tag-default {
+  background-color: $tag-default-bg;
+  color: $primary-color;
+}
+.tag-warning {
+  background-color: $tag-warning-bg;
+  color: $red-failure;
+}
+.tag-success {
+  background-color: $tag-success-bg;
+  color: $green-success;
+  &:hover{
+    background-color: #b9ffcd;
+    color: #119a30;
+  }
+}
+.tag-orange {
+  background-color: $tag-orange-bg;
+  color: $brand-orange;
+  &:hover{
+    background-color: #ffd6b6;
+    color: #ff7202;
+  }
+}
+.tag-lg {
+  padding: 6px 16px;
+}
+.tag-md {
+  padding: 0.35em 0.5em;
+}
+
+
+.tag-schedule-item {
+  text-align: left;
+  white-space: normal;
+}
+.copy-link {
+  cursor: pointer;
+  p {
+    color: $primary-color;
+    font-size: 12px;
+    margin-bottom: 0px;
+    span {
+      svg {
+        width: 12px;
+        height: auto;
+        path {
+          fill: $primary-color;
+        }
+      }
+    }
+    &:hover {
+      color: $primary-color-dark;
+      svg {
+        path {
+          fill: $primary-color-dark;
+        }
+      }
+    }
+  }
+}

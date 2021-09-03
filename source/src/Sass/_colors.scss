@@ -1,0 +1,159 @@
+// -----------------------------------------------------------------------------
+// This file contains all @colors declarations.
+// -----------------------------------------------------------------------------
+
+// Main color varialbels
+$primary-color-dark: #194DDE;
+$primary-color-light: #6588EB;
+$primary-color: #3766E8;
+$second-color:#78D5D7;
+$off-white:#F9F9F9;
+
+$text-primary:#545454;
+$text-secondary: #343434;
+$text-tertiary:#A0A0A0;
+$text-other: #7E7E7E;
+
+$pure-black:#000000;
+$pure-white:#ffffff;
+
+$brand-orange:#FF7E17;
+$brand-pink:#FF879D;
+$brand-purple:#9077E7;
+$brand-pink-white:#FAF5FF;
+
+$heading-primary:#0F0F0F;
+
+$green-success: #28a745;
+$red-failure:#dc3545;
+$yellow-warning: #FFC107;
+
+$gray: #F0F0F0;
+$gray-dark:#CED4DA;
+
+$text-highlight:#004156;
+
+$form-bg-color:#EFF3FD;
+$primary-extra-light:#F3F6FE;
+$primary-extra-light-focused:#E0E8FC;
+
+// Tags
+$tag-default-bg: #D1E3FF;
+$tag-warning-bg:#FFE1E1;
+$tag-success-bg:#CFFFDD;
+$tag-orange-bg:rgba(255, 231, 212, 1);
+
+// Extra
+$sidebar-link:#c6d4da;
+
+$btn-disabled-color:#6588eb;
+
+$light-color: #cccccc;
+
+$auth-bg: #E5E5E5;
+
+$tag-color: #D1E3FF;
+
+$video-bg: #474646;
+
+
+// Internal Colors classes
+
+/* Fonts Colors*/
+
+.primary-color-dark {
+    color: $primary-color-dark;
+}
+
+.primary-color {
+    color: $primary-color;
+}
+
+.second-color {
+    color: $second-color;
+}
+
+.off-white {
+    color: $off-white;
+}
+
+
+.text-primary {
+    color: $text-primary!important;
+}
+
+.text-secondary {
+    color: $text-secondary;
+}
+
+.text-tertiary {
+    color: $text-tertiary;
+}
+
+.heading-primary {
+    color: $heading-primary;
+}
+
+
+.black-color {
+    color: $pure-black;
+}
+
+.white-color {
+    color: $pure-white;
+}
+
+.text-other{
+    color: $text-other;
+}
+
+.green-success-text {
+    color: $green-success;
+}
+
+.red-failure-text {
+    color: $red-failure;
+}
+
+
+.gray-color {
+    color: $gray;
+}
+
+.gray-color-dark {
+    color: $gray-dark;
+}
+
+.light-color{
+    color: $light-color;
+}
+
+
+/* BG Colors */
+.primary-bg {
+    background-color: $primary-color;
+}
+
+.second-bg {
+    background-color: $second-color;
+}
+
+.off-white-bg {
+    background-color: $off-white;
+}
+
+.form-bg{
+    background-color: $form-bg-color;
+}
+
+.tag-bg{
+    background-color: $tag-color;
+}
+
+.pure-white-bg{
+    background-color: $pure-white;
+}
+
+.video-bg{
+    background-color: $video-bg;
+}

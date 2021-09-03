@@ -1,0 +1,108 @@
+@import "../../../../../Sass/variables";
+
+.element-frame-wrapper {
+  @include set-margin($bottom: 24px);
+  @include set-background($color: $pure-white);
+  @include set-border($radius: 8px);
+  @include set-depth($overflow: hidden);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+.element-frame-block {
+  width: auto;
+  height: auto;
+  @include set-background($color: $video-bg);
+  overflow: hidden;
+  position: relative;
+  min-height: 160px;
+  .checkbox {
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .element-tag {
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .external-link{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+    span{
+      svg{
+        width: 18px;
+        height: 18px;
+        path{
+          fill: $pure-white;
+          fill-opacity: 1;
+        }
+      }
+    }
+  }
+  &:hover {
+    .checkbox,
+    .element-tag {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.frame-title-block{
+    overflow: hidden;
+    width: 130px;
+    word-break: break-all
+}
+.checkboxVisible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.element-frame-content {
+  @include set-padding-all($padding: 12px);
+  .frame-title-wrapper {
+    @include set-margin($bottom: 10px);
+    @include set-flex($justify-content: space-between, $align-items: center);
+  }
+}
+
+.frame-actions-block {
+  @include set-flex($justify-content: space-between, $align-items: flex-start);
+  margin-bottom: 5px;
+  .tag-block {
+    margin-right: 0px;
+  }
+}
+
+.frame-actions {
+  max-width: 190px;
+  word-break: break-word;
+  .btn{
+    svg {
+      margin-right: 0px;
+    }
+    &:hover{
+      svg{
+        path{
+          fill: $red-failure;
+          }
+      }
+    }
+  }
+}
+
+
+.reopen-link.link{
+  &:hover{
+    color: $red-failure;
+  }
+  &:focus{
+    color: $red-failure;
+  }
+}

@@ -1,0 +1,111 @@
+@import "../../../Sass/variables";
+
+.auth-card {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    // @include set-dimensions($width: 480px, $max-width: 100%);
+    @include set-background($color: $pure-white);
+    @include set-border($radius: 15px);
+    box-shadow: 6px 6px 30px rgba(157, 157, 157, 0.11);
+
+    .auth-card-padding {
+        @include set-padding($top: 40px, $bottom: 40px, $left: 40px, $right: 40px);
+    }
+
+    .auth-card-center {
+        @include set-dimensions($width: 100%);
+        margin: 0 auto;
+        text-align: center;
+        &.auth-card-md {
+            @include set-dimensions($width: 900px);
+        }
+    }
+    .auth-content {
+        .auth-title {
+            @include set-margin($top: 30px, $bottom: 30px);
+            @include set-font($size: 26px, $weight: 600, $color: $text-secondary);
+        }
+        .auth-form-block {
+            text-align: left;
+            .form-group {
+                @include set-margin($bottom: 20px);
+            }
+        }
+    }
+}
+
+.notify-message-img {
+    width: 150px;
+    height: auto;
+}
+
+.auth-bottom-content {
+    text-align: center;
+    @include set-margin($top: 50px);
+    p {
+        a {
+            @include set-margin($left: 5px);
+        }
+    }
+    .auth-bottom-nav {
+        @include set-margin($top: 30px);
+        ul {
+            li {
+                &:after {
+                    content: "|";
+                    width: auto;
+                    height: auto;
+                    margin: 0 0 0 10px;
+                    color: $text-primary;
+                }
+                &:last-child:after {
+                    content: none;
+                }
+                a {
+                    @include set-font($color: $text-primary, $size: 14px, $weight: 400);
+                    &:hover {
+                        @include set-font($color: $primary-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .auth-action-button{
+//     @include set-flex($justify-content: space-between);
+// }
+
+.card-pagination {
+    @include set-flex($justify-content: center);
+    margin-top: 50px;
+    ul {
+            @include set-margin($right:5px);
+            li {
+                @include set-dimensions($width: 40px, $height: 8px);
+                @include set-background($color: $pure-white);
+                &.active {
+                    @include set-background($color: $primary-color-dark);
+                }
+                span {
+                    visibility: hidden;
+                }
+            }
+        
+    }
+}
+
+@media (max-width: 991px) {
+    .auth-card-center {
+        &.auth-card-md {
+            @include set-dimensions($width: 100%);
+        }
+    }
+}
+@media (max-width: 768px) {
+    .auth-card {
+        .auth-card-padding {
+            @include set-padding($top: 30px, $bottom: 30px, $left: 30px, $right: 30px);
+        }
+    }
+}

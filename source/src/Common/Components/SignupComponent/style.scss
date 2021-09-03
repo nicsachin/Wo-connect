@@ -1,0 +1,133 @@
+// Color Variables Import
+@import "../../../Sass/variables";
+
+/*================================
+      LOGIN COMPONENT STYLE
+  ==================================*/
+  .signup-container{
+    overflow-x: hidden;
+  }
+.signup-right-block{
+.auth-content{
+   @include set-padding($top: 20px, $right: 90px, $bottom:90px, $left: 90px);
+   box-shadow: none;
+   .auth-form-block {
+    text-align: left;
+    .form-group {
+        @include set-margin($bottom: 20px);
+    }
+}
+}
+}
+.singup-left-content{
+    @include set-flex($justify-content:center);
+}
+
+
+.wobot-login-content {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.login-footer {
+
+    & .login-text {
+        font-size: 12px;
+        color: $text-primary;
+        text-align: center;
+        line-height: 24px;
+    }
+}
+
+.login-form{
+        .checkbox-inline{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        input{
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+        label{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+/* Login IMG Right */
+.login-bg {
+    background-color: $primary-color;
+}
+.login-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .top-link{
+        position: absolute;
+        top: 50px;
+        right: 50px;
+    }
+    .random-message{
+        width: 350px;
+        padding: 16px 50px;
+        background-color: $pure-white;
+        box-shadow: 4px 4px 54px rgba(41, 41, 41, 0.13);
+        border-radius: 10px;
+        margin: 50px;
+    }
+}
+
+
+
+    
+
+/*================================
+      SIGN UP COMPONENT STYLE
+  ==================================*/
+  .signup-right-block{
+    .auth-card{
+        box-shadow: none;
+        @include set-dimensions($max-width:400px, $min-width:200px, $width:100%);
+    }
+    .auth-bottom-content{
+        @include  set-margin($top: 20px);
+    }
+}
+.signup-right-block{
+    @include set-flex($justify-content:center,$align-items:center);
+}
+
+@media (max-width: 991px) {
+    .signup-row{
+        flex-direction: column-reverse;
+    }
+    .signup-right-block{
+    .auth-bottom-nav{
+        @include set-margin($bottom: 12px);
+         }
+    }
+}
+
+
+//   .wobot-login-wrapper {
+
+//     .login-footer {
+//       position: unset;
+//       margin: 50px auto auto;
+//     }
+
+//     .wobot-login-block {
+//       position: unset;
+//       transform: unset;
+//       margin: 100px auto;
+//     }
+//   }
+
+

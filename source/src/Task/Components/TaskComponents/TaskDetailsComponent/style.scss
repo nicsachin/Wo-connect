@@ -1,0 +1,28 @@
+@import "../../../../Sass/colors";
+@import "../../../../Sass/mixins";
+
+.title{
+    position: relative;
+    .status{
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+}
+.switch-tab{
+    @include set-flex($justify-content: flex-end);
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+        background-color: $primary-color;
+    }
+}
+
+.nav-pills {
+    #left-tabs-example-tab-first{
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    #left-tabs-example-tab-second{
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+}

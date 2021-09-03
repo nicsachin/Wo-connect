@@ -1,0 +1,124 @@
+@import "../../../../Sass/variables";
+
+.card-box-block{
+    @include set-dimensions($width: 365px);
+    @include set-padding($top: 35px, $bottom: 35px, $left: 25px, $right: 25px);
+    @include set-background($color: #F9FAFF);
+    /* Shadow for active inputs */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 1px 1px 1px rgba(0, 0, 0, 0.05);
+    @include set-border($radius: 7px);
+    .card-box-content{
+        @include set-flex($justify-content: flex-start, $align-items: flex-start);
+        text-align: left;
+        .card-box-icon{
+            display: block;
+            box-sizing: content-box;
+            background: rgba(55, 102, 232, 0.2);
+            @include set-padding-all($padding: 10px);
+            @include set-border($radius: 4px);
+            svg{
+                @include set-dimensions($width: 18px, $height: auto);
+                path{
+                    fill: $primary-color-dark;
+                    fill-opacity: 1;
+                }
+            }
+        }
+        .card-box-text{
+            display: block;
+            @include set-margin($left: 30px);
+            .card-box-title{
+                @include set-font($size:18px, $weight:500px, $color:$heading-primary);
+                @include set-margin($bottom: 10px);
+            }
+            .card-box-subtitle{
+                @include set-font($size:14px, $weight:400px, $color:$text-tertiary);
+                @include set-margin($bottom: 0px);
+            }
+        }
+    }
+    .inner-card-box{
+        margin: 50px 0 25px;
+        @include set-flex($justify-content: space-between, $align-items: center);
+        @include set-background($color: $pure-white);
+        box-shadow: 6px 6px 30px rgba(157, 157, 157, 0.11);
+        @include set-border($radius: 4px);
+        @include set-padding($top: 12px, $bottom: 12px, $left: 18px, $right: 18px);
+        .inner-card-content{
+            @include set-flex($justify-content: flex-start, $align-items: center);
+            text-align: left;
+            .inner-card-icon{
+                @include set-margin($right: 10px);
+                svg{
+                    @include set-dimensions($width: 20px, $height: auto);
+                    path{
+                        fill: $green-success;
+                        fill-opacity: 1;
+                    }
+                }
+            }
+            .inner-card-text{
+                .inner-card-title{
+                    @include set-font($size:14px, $weight:500, $color:$primary-color-dark);
+                    line-height: 14px;
+                }
+                span{
+                    @include set-font($size:14px, $weight:500, $color:$primary-color-dark);
+                }
+                .inner-card-sub-title{
+                    @include set-font($size:12px, $weight:400, $color:$text-tertiary);
+                }
+            }
+        }
+        .inner-card-button{
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 20px;
+            span{
+                svg{
+                    @include set-dimensions($width: 14px, $height: auto);
+                    path{
+                        fill: $primary-color-dark;
+                        fill-opacity: 1;
+                    }
+                }
+            }
+            &:hover{
+                background-color: #eee;
+            }
+        }
+    }
+    &.float-right-block{
+        margin: 0 0 0 auto;
+        @media screen and (max-width: 991px){
+            margin: 0 auto;
+    
+        }
+    }
+    @media screen and (max-width: 991px){
+            margin: 0 auto;
+            @include set-dimensions($width: 100%);    
+        }
+}
+
+.card-trans-block{
+        @include set-flex($justify-content: center, $align-items: end);
+        text-align: left;
+        .card-tans-text{
+            @include set-margin($left: 30px);
+            ul{
+                li{
+                     @include set-margin($bottom: 5px);
+                }
+            }
+        }
+}
+
+.card-trans-block{
+    @include set-margin($top: 50px);
+}
+

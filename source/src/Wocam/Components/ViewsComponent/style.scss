@@ -1,0 +1,99 @@
+@import "../../../Sass/variables";
+
+
+.video-grid-layout {
+  width: 100%;
+  overflow: hidden;
+  min-height: calc(100vh - 120px);
+  float: right;
+  position: relative;
+}
+.react-grid-item > .react-resizable-handle::after {
+    width: 10px;
+    z-index: 999;
+    height: 10px;
+    border-right: 2px solid $pure-white;
+    border-bottom: 2px solid $pure-white;
+}
+.selected-table-block {
+  display: block;
+  border-radius: 12px;
+  padding: 24px;
+  background-color: $pure-white;
+  height: 100%;
+
+  .selected-options {
+    margin-top: 30px;
+
+    .selected-block {
+      padding: 10px;
+      border-radius: 6px;
+      background-color: $pure-white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .action {
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: none;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        @include set-transition(all 0.3s);
+        color: $red-failure;
+        background-color: $tag-warning-bg;
+
+        &:hover {
+          background-color: $form-bg-color
+        }
+
+        svg {
+          cursor: pointer;
+          width: 16px;
+          height: auto;
+
+          path {
+            fill: $red-failure;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Select and Add Option
+
+
+// React grid full screen scss
+
+.fullScreenGrid {
+  width: 100% !important;
+  height: calc(100vh - 120px) !important;
+  transform: translate(5px, 5px) !important;
+  z-index: 1;
+}
+
+.normalGrid {
+  width: 335px !important;
+  height: 245px !important;
+}
+
+.hiddenGrid {
+  display: none !important ;
+}
+
+.camera-inactive-container>p{
+  color: white;
+  font-weight: 500;
+}

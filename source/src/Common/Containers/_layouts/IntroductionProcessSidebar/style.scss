@@ -1,0 +1,84 @@
+@import "../../../../Sass/variables";
+
+.bottom-quick-links,
+.task-select-list{
+    @include set-padding-all($padding: 25px);
+}
+    .task-select-list{ 
+        li{
+            color: $text-primary;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 4px;
+            -webkit-user-select: none;
+            user-select: none;
+            @include set-flex($align-items: center);
+            @include set-dimensions($width: 100%);
+            @include set-margin($bottom: 5px);
+            border-top-right-radius: 50px;
+                border-bottom-right-radius: 50px;
+            &:hover{
+                color: $primary-color;
+                @include set-background($color: $gray);
+                label{
+                    @include set-font($color: $primary-color);
+                }
+            }
+            &.active{
+                @include set-background($color: $primary-color);
+                color: $pure-white;
+                label{
+                    @include set-font($color: $pure-white);
+                }
+            }
+            &:last-child{
+                margin-bottom: 0px;
+            }
+            label{
+                    @include set-font($size: 14px, $weight: 400);
+                    @include set-margin($bottom: 0px);
+                    cursor: pointer;
+                }
+        }
+        &::-webkit-scrollbar-track{
+            -webkit-box-shadow: inset 0 0 6px #ffffff;
+            background-color: #e0e0e0;
+        }
+        &::-webkit-scrollbar{
+            width: 5px;
+            border-radius: 50px;
+            background-color: $pure-white;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color:#b8b6b6;
+            border-radius: 50px;
+        }
+    }
+
+    .bottom-quick-links{
+        ul{
+            margin-bottom: 0px;
+            li{
+                @include set-margin($bottom: 5px);
+                a{
+                    @include set-font($color: $text-other);
+                    text-decoration: underline;
+                    svg{
+                        path{
+                            fill: $text-other;
+                            fill-opacity: 1;
+                        }
+                    }
+                    &:hover{
+                       @include set-font($color: $primary-color);
+                       svg{
+                            path{
+                                fill: $primary-color;
+                                fill-opacity: 1;
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+    }

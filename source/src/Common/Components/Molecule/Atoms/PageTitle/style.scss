@@ -1,0 +1,23 @@
+@import "../../../../../Sass/variables";
+
+.header-section{
+    @include set-margin($bottom:25px);
+    .flex-wrapper{
+        @include set-flex($justify-content: space-between, $align-items: flex-start);
+        .header-block{
+            .header-title{
+                @include set-flex($justify-content: flex-start, $align-items: flex-end);
+                span{
+                    margin-left: 30px;
+                }
+            }
+            .sub-title{
+                @include set-margin($top:20px);
+                @include set-font($size:14px, $weight: 400, $color: $text-secondary)
+            }
+        }
+    }
+    .page-action{
+        @include set-flex($justify-content: flex-start, $align-items: baseline);
+    }
+}

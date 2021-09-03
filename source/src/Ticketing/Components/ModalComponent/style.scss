@@ -1,0 +1,52 @@
+@import "../../../Sass/variables";
+
+.ticket-details .nav-tabs{
+    border-bottom: 0px;
+    .nav-link{
+        color: $text-other;
+        border-color: transparent;
+        border-bottom: 2px solid #CED4DA;
+        font-weight: 500;
+        &:hover{
+            border-bottom: 2px solid #CED4DA;
+        }
+        &.active{
+            color: $primary-color;
+            background-color: transparent;
+            border-bottom: 2px solid $primary-color;
+        }
+    }
+}
+
+.ticket-details .tab-element{
+    @include set-flex($justify-content: space-between);
+    margin-bottom: 20px;
+    ul{
+        margin-left: 0px;
+    }
+}
+
+.ticket-details{
+    .image-frame{
+        width: 100%;
+        height: 600px;
+        background: #242323;
+    }
+}
+
+.h-350{
+    height: 350px!important;
+}
+
+.frame-wrapper-comment{
+    width: 80%;
+    margin: 12px auto 0;
+    @include set-flex($justify-content: space-between);
+    .form-group{
+        width: 100%;
+    }
+    button{
+        margin-left: 8px;
+        width: 20%;
+    }
+}

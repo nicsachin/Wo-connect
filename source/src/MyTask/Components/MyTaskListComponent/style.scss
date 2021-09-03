@@ -1,0 +1,19 @@
+@import "../../../Sass/variables";
+
+.user-table {
+  margin-bottom: 0px;
+  li {
+    margin-bottom: 8px;
+    cursor: pointer;
+    &:hover {
+      color: $primary-color;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.word-break {
+  word-break: break-word;
+}

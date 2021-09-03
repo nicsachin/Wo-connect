@@ -1,0 +1,262 @@
+@import "colors";
+@import "mixins";
+@import "typography";
+
+// -----------------------------------------------------------------------------
+// This file contains all @typogrpahy declarations.
+// -----------------------------------------------------------------------------
+
+.form-control {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.41px;
+    border-radius: 6px;
+    height: 37px;
+    border: 1px solid $gray-dark;
+    box-shadow: 0 0 0 1px transparent;
+    &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 0 1px $primary-color;
+    }
+}
+
+.form-invisible{
+    input{
+        @include set-background($color: transparent);
+        border: 0;
+        box-shadow: none;
+    }
+}
+
+
+
+.error-msg{
+    color: $red-failure;
+    font-size: 12px;
+    font-weight: 400;
+}
+.error-red {
+    margin-bottom: 5px!important;
+    border-color: $red-failure!important;
+    box-shadow: 0 0 0 1px $red-failure!important;
+
+  &:focus {
+    border-color: $red-failure!important;
+    box-shadow: 0 0 0 1px $red-failure!important;
+  }
+}
+
+label{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.41px;
+    color: $text-secondary;
+    .small {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.06px;
+        color: $text-secondary;
+    }
+}
+// Ms Edge and IE
+input::-ms-reveal,
+input::-ms-clear {
+display: none;
+}
+
+textarea.form-control {
+    height: 72px;
+}
+
+.form-control:focus {
+    label {
+        color: $primary-color;
+    }
+}
+
+.form-control[readonly]{
+    background-color: $pure-white;
+}
+
+input{
+    &::placeholder{
+        color: $off-white;
+    }
+}
+
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    & input {
+        position: absolute;
+        font-size: 50px;
+        opacity: 0;
+        right: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+}
+.import-block{
+    margin: 40px 0;
+    position: relative;
+    label{
+        svg{
+            path{
+                fill: $primary-color;
+            }
+        }
+    }
+}
+input[type="file"] {
+  position: absolute;
+    z-index: -1;
+    padding: 0;
+    top: 2px;
+    left: 51px;
+    font-size: 15px;
+  color: rgb(153,153,153);
+}
+
+.action-select{
+    width: 230px;
+}
+.comment-box{
+    .form-group{
+        textarea{
+            background-color: $gray;
+        }
+    }
+}
+
+.search-filter {
+    position: relative;
+    width: 50%;
+    float: right;
+
+    input {
+        border: 1px solid transparent;
+        background: #f3f3f4;
+        padding-right: 30px;
+    }
+
+    & svg {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 18px;
+        opacity: 0.5;
+    }
+}
+
+.react-selects .css-1kabip1-control{
+    border-color: $red-failure;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.rdtPicker td.rdtActive,
+.rdtPicker td.rdtActive:hover{
+    background-color: $primary-color;
+}
+
+
+// Radio
+
+.form-check-input {
+    margin-top: 0.2rem;
+}
+
+// chekboxes
+
+.checkbox label{
+    padding-left: 24px;
+}
+
+
+.checkbox.checkbox-inline {
+    label{
+        position: relative;
+    }
+}
+
+input[type="checkbox"] + .box:before,
+input[type="checkbox"] + .box:after{
+    transition: all .3s;
+}
+
+
+input[type="checkbox"] + .box:after{
+    position: absolute;
+    left: 4px;
+    top: -10px;
+    margin-top: 0px;
+    margin-left: 0px;
+    display: inline-block;
+    content: ' ';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #DADADA;
+    border-radius: 2px;
+    background-color:$pure-white;
+    z-index: 1000;
+}
+
+
+.box.inline{
+    margin-right: 5px;
+}
+input[type="checkbox"] + .box.inline:after{
+    top: -4px;
+}
+input[type="checkbox"]:checked + .box.inline:before{
+    top: -0px;
+}
+
+
+input[type="checkbox"]:checked + .box:after{
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.checkbox-inline input[type="checkbox"]{
+      display: none;
+}
+
+
+input[type="checkbox"]:checked + .box:before{
+    transform: rotate(45deg);
+    position: absolute;
+    left: 12px;
+    top: -5px;
+    width: 5px;
+    height: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-top: 0;
+    border-left: 0;
+    border-color: $pure-white;
+    content: '';
+    z-index: 10000;
+}
+
+
+@media (max-width: 768px){
+    .import-block{
+        display: block;
+    }
+}

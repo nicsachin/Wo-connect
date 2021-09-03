@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+
+$primary-font: 'Open Sans',sans-serif;
+$secondary-font: 'Roboto',sans-serif;
+
+// Fonts
+.opensans-font {
+  font-family: $primary-font;
+}
+
+.roboto-font {
+  font-family: $secondary-font;
+}

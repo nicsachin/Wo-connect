@@ -1,0 +1,287 @@
+@import "../../../Sass/variables";
+
+.color-pink {
+  color: $brand-pink;
+}
+
+.color-second {
+  color: $second-color;
+}
+
+.color-purple {
+  color: $brand-purple;
+}
+
+.color-orange {
+  color: $brand-orange;
+}
+
+.color-primary {
+  color: $primary-color;
+}
+
+// Icons color
+.icon-bg-pink {
+  background: transparentize($brand-pink, 0.8);
+  svg {
+    
+    path{
+      fill: $brand-pink;
+    }
+  }
+}
+
+.icon-bg-second {
+  background: transparentize($second-color, 0.8);
+  svg {
+    
+    path{
+      fill: $second-color;
+    }
+  }
+}
+
+.icon-bg-purple {
+  background: transparentize($brand-purple, 0.8);
+  svg {
+    
+    path{
+      fill:$brand-purple;
+    }
+  }
+  
+}
+
+.icon-bg-orange {
+  background: transparentize($brand-orange, 0.8);
+  svg {
+    
+    path{
+      fill: $brand-orange;
+    }
+  }
+}
+
+.icon-bg-primary {
+  background: transparentize($primary-color, 0.8);;
+  svg {
+    path{
+      fill: $primary-color;
+    }
+  }
+}
+
+.icon-bg-green {
+  background: transparentize($green-success, 0.8);;
+  svg {
+    path{
+      fill: $green-success;
+    }
+  }
+}
+
+// Stats box BG
+.stats-bg-pink {
+  background: transparentize($brand-pink, 0.9);
+}
+
+.stats-bg-second {
+  background: transparentize($second-color, 0.9);
+}
+
+.stats-bg-purple {
+  background: transparentize($brand-purple, 0.9);
+}
+
+.stats-bg-orange {
+  background: transparentize($brand-orange, 0.9);
+}
+
+.stats-bg-primary {
+  background: transparentize($primary-color, 0.9);
+}
+
+.data-filter-ticketing{
+  width: 100%;
+  margin-right: 20px;
+  .react-select{
+    width: 150px;
+  }
+}
+
+.task-data{
+  li{
+    margin-bottom: 5px;
+    font-weight: 500;
+    &:last-child{
+      margin-bottom: 0px;
+    }
+  }
+}
+
+// Page Style
+.stats-box {
+  border-radius: 18px;
+  padding: 20px 28px;
+  color: $pure-white;
+  margin-bottom: 20px;
+
+  .stats-icon {
+    margin-top: 35px;
+
+    span {
+      svg {
+        border-radius: 50%;
+        width: 50px;
+        height: auto;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.data-box {
+  border-radius: 18px;
+  padding: 22px 28px;
+  background: $form-bg-color;
+  margin-bottom: 20px;
+
+  .data-panel {
+    background: $pure-white;
+    border-radius: 12px;
+    padding: 10px 24px;
+    margin-bottom: 15px;
+    @include set-flex(space-between, center, center);
+
+    .data-split {
+      @include set-flex(unset, center, center);
+
+      span {
+        margin-right: 15px;
+
+        svg {
+          padding: 9px;
+          width: 40px;
+          border-radius: 50%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+.btn-action{
+  justify-content: flex-end!important;
+  margin-top: 10px!important;
+  a{
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg{
+      width: 12px;
+      height: auto;
+    }
+  }
+}
+
+
+
+.switch-block{
+  @include set-flex($justify-content: flex-start, $direction: row);
+  flex-wrap: wrap;
+  .switch-card{
+    @include set-margin($right: 30px, $bottom: 20px);
+    @include set-dimensions($width:300px, $height:100px);
+    @include set-background($color: $pure-white);
+    padding: 20px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    min-height: 90px;
+    .card-title{
+      @include set-flex($justify-content: flex-start, $align-items: flex-end);
+      @include set-dimensions($width:100%);
+      @include set-margin($bottom: 0px);
+    }
+    .icon-block{
+      display: block;
+      width: 30px;
+      height: 30px;
+      @include set-flex($justify-content: center, $align-self:baseline);
+      @include set-padding-all($padding: 5px);
+      @include set-border($radius: 4px);
+      background-color: "${props.obj.iconBgColor}";
+      svg {
+        width: 24px;
+        height: auto;
+      }
+    }
+    .content-block {
+        display: block;
+        margin-left: 15px;
+        @include set-dimensions($width:100%);
+
+      }
+    }
+    .bottom-block {
+      @include set-flex($justify-content: space-between, $align-items:center);
+      .btn {
+        svg {
+          width: 12px;
+          height: auto;
+           path{
+            fill: $text-other;
+            fill-opacity: 1;
+          }
+        }
+      }
+      span {
+        color: $text-tertiary;
+      }
+    }
+}
+.switch-card{
+  border: 2px solid transparent;
+  &.border-blue{
+    &:hover .bottom-block{
+      button{
+        svg{
+          path{
+            fill: $primary-color;
+          }
+        }
+      }
+    }
+  }
+  &.border-orange{
+    &:hover .bottom-block{
+      button{
+        svg{
+          path{
+            fill: $brand-orange;
+          }
+        }
+      }
+    }
+  }
+  &.border-green{
+    &:hover .bottom-block{
+      button{
+        svg{
+          path{
+            fill: $green-success;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .data-filter-ticketing{
+  width: 100%;
+  margin-right: 20px;
+  }
+}

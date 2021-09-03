@@ -1,0 +1,113 @@
+@import "../../../../Sass/variables";
+
+.element-block {
+  @include set-padding-all($padding: 24px);
+  @include set-margin($bottom: 24px);
+  @include set-background($color: $pure-white);
+  @include set-border($radius: 16px);
+  @include set-depth($overflow: hidden);
+
+    .element-section {
+      @include set-margin($bottom: 40px);
+      @include set-padding-all(0);
+
+      .element-header {
+        @include set-flex($align-items: baseline, $justify-content: space-between);
+        @include set-depth($overflow: hidden);
+        @include set-margin($bottom: 20px);
+
+      .element-title-h5 {
+        @include set-font( $size: 18px, $weight: 600, $color: $text-primary);
+        @include set-margin($bottom: 0);
+        word-break: break-word;
+      }
+      .element-title-h6{
+        @include set-font($size: 16px, $weight: 600, $color: $text-primary);
+        @include set-margin($bottom: 0);
+        word-break: break-word;
+      }
+    }
+  }
+}
+    
+.data-list {
+      .data-highlight {
+        @include set-font($size: 14px, $weight: 400);
+      }
+
+      .data-title {
+        @include set-font($color: $text-other);
+      }
+
+      .data-highlight {
+        @include set-font($color: $primary-color);
+        @include set-margin($left: 4px);
+        &:hover {
+          @include set-font($color: $primary-color-dark);
+        }
+      }
+}
+
+.data-list {
+    li {
+      @include set-margin($bottom: 16px);
+      &:last-child {
+        @include set-margin($bottom: 0);
+      }
+    }
+}
+
+.open-link {
+
+  svg {
+    @include set-margin($left: 6px);
+      path {
+          fill: $primary-color;
+          fill-opacity: 1;
+      }
+  }
+  &:hover {
+      svg {
+          path {
+              fill: $primary-color-dark;
+              fill-opacity: 1;
+          }
+      }
+  }
+}
+
+.element-comment-list{
+  height: 250px;
+  overflow-y: auto;
+  .element-comment-item{
+    @include set-padding($bottom: 25px);
+    border-bottom: 1px solid #F0F0F0;
+    @include set-margin($bottom: 10px, $right:10px);
+    .comment-text{
+      @include set-font( $size: 14px, $weight: 400);
+      @include set-margin($bottom: 0px);
+    }
+    .comment-meta{
+      float: right;
+      font-style: italic;
+      color: #7E7E7E;
+      @include set-margin($top: 5px);
+      @include set-font( $size: 12px, $weight: 400);
+    }
+    &:last-child{
+      border-bottom: 0px;
+    }
+  }
+}
+
+.chat-block{
+  button{
+    svg{
+      width: 18px;
+      height: auto;
+      path{
+        fill: $pure-white;
+      }
+    }
+  }
+}

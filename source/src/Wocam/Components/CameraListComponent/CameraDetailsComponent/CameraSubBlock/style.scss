@@ -1,0 +1,68 @@
+@import "../../../../../Sass/variables";
+.sub-page-title{
+    @include set-margin($bottom: 30px);
+    @include set-flex($justify-content:flex-start, $align-items: baseline);
+}
+.element-block{
+    @include set-padding-all($padding: 20px);
+    @include set-margin($bottom: 24px);
+    @include set-background($color: $pure-white);
+    @include set-border($radius: 16px);
+    @include set-depth($overflow: hidden);
+    .element-header{
+        @include set-depth($overflow: hidden);
+        word-break: break-word;
+    }
+    .element-meta-list{
+        @include set-margin($top: 25px, $bottom: 25px);
+        ul{
+            li{
+                @include set-margin($bottom: 15px);
+                &:last-child{
+                  @include set-margin($bottom: 0px);
+                }
+                &.element-meta-name,
+                &.element-meta-key{
+                   @include set-font($color: $text-other, $weight: 400, $size: 14px);
+                }
+                .element-icon{
+                    @include set-margin($right: 5px);
+                    @include set-flex($justify-content: space-between);
+                    svg{
+                      @include set-dimensions($width: 15px, $height:15px);
+                        path{
+                            fill: $text-other;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .element-bottom{
+        @include set-flex($justify-content: space-between, $align-items: center);
+        .element-data-link{
+          @include set-font($size: 14px, $weight: 400, $color: $text-primary);
+        }
+    }
+}
+
+.setup-list-wrapper{
+    @include set-margin($bottom: 15px);
+        span{
+            svg {
+                
+                width: 14px;
+                height: auto;
+                path {
+
+                    fill:  $text-other;
+                }
+            }
+        }
+
+}
+
+
+.link>.no-line{
+    text-decoration: none;
+}

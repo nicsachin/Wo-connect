@@ -1,0 +1,18 @@
+@import "../../../Sass/variables";
+
+.auth-login-layout{
+    width: 50%;
+    min-width: 50%;
+}
+
+.auth-login{
+    @include set-flex($direction: column);
+    @include set-dimensions($width: 450px);
+}
+
+
+@media (max-width: 768px) {
+    .auth-login{
+        @include set-dimensions($width: auto);
+    }
+}

@@ -1,0 +1,28 @@
+      @import "../../../../../Sass/variables";
+
+      .status-tag {
+        @include set-font($color: $text-primary, $weight: 500, $size: 12px);
+        @include set-dimensions($min-width: 80px);
+        @include set-margin($left: 6px);
+        @include set-background($color: $gray);
+        @include set-border($radius: 25px);
+        @include set-padding(6px, 12px, 6px, 12px);
+        @include set-flex($justify-content: center, $align-items: center);
+        :hover{
+            @include set-background($color: $gray);
+        }
+        .status-icon{
+            @include set-dimensions($width:8px, $height:8px);
+            box-sizing: content-box;
+            @include set-border($radius:50%);
+            @include set-margin($right:5px);
+            &.green{
+                @include set-background($color: $green-success);
+            }
+            &.red{
+                @include set-background($color: $red-failure);
+            }
+        }
+        
+        
+      }

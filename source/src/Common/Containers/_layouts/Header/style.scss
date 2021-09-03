@@ -1,0 +1,120 @@
+@import "../../../../Sass/variables";
+
+/*================================
+      TOP HEADER
+  ==================================*/
+.header {
+  padding: 10px 30px;
+  background-color: $pure-white;
+  .logo{
+    width: 30px;
+    height: auto;
+  }
+  & .dropdown {
+    @include set-flex($justify-content: unset);
+
+    .dropdown-toggle {
+      @include set-flex($justify-content: unset);
+    }
+
+    .dropdown-menu {
+      border-radius: 7px;
+      display: block;
+      border: 0px;
+      transition: 0.3s;
+      visibility: hidden;
+      top: 0;
+      opacity: 0;
+      box-shadow: 0 1px 24px rgba(0, 0, 0, 0.1);
+      background-color: $pure-white;
+      transform: translate3d(-10px, 40px, 0px) !important;
+      .dropdown-item{
+        padding: 10px 8px;
+        @include set-flex($justify-content: flex-start);
+        font-size: 14px;
+        span{
+          transition: all 0.1s ease-out;
+        -webkit-transition: all 0.1s ease-out;
+        -moz-transition: all 0.1s ease-out;
+        -o-transition: all 0.1s ease-out;
+        -ms-transition: all 0.1s ease-out;
+        }
+      }
+      .dropdown-item:focus, .dropdown-item:hover {
+          color: #16181b;
+          text-decoration: none;
+          background-color: #e9ecef;
+          svg{
+            path{
+              fill: $primary-color
+            }
+          }
+          span{
+            transform: translate(0.2em,0);
+          -webkit-transform: translate(0.2em,0);
+          -moz-transform: translate(0.2em,0);
+          -o-transform: translate(0.2em,0);
+          -ms-transform: translate(0.2em,0);
+          color: $primary-color;
+          }
+      }
+      
+      a {
+        svg {
+          width: 15px;
+          height: auto;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .dropdown-item:active {
+      color: $pure-white;
+      text-decoration: none;
+      background-color: transparent;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+      min-width: 160px;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .lh15 {
+      line-height: 1.2;
+    }
+  }
+
+  .dropdown-menu {
+    border-radius: 4px;
+  }
+
+  .user-setting {
+    @include set-flex($justify-content: unset);
+
+    & label {
+      margin-right: 15px;
+      margin-bottom: 0px;
+    }
+  }
+
+  .user-thumb {
+    width: 22px;
+    height: auto;
+    border-radius: 50px;
+    line-height: 2.6;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+
+    & .dropdown {
+
+      .dropdown-menu {
+        transform: translate3d(-99px, 40px, 0px) !important;
+      }
+    }
+  }
+}

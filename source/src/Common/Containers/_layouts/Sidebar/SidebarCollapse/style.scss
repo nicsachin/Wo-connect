@@ -1,0 +1,352 @@
+@import "../../../../../Sass/variables";
+
+.pro-sidebar{
+    color: $pure-black;
+    width: 200px;
+    min-width: 200px;
+}
+
+.pro-sidebar > .pro-sidebar-inner{
+        background: $pure-white;
+}
+
+.pro-sidebar.collapsed {
+    width: 72px;
+    min-width: 72px;
+}
+
+.pro-menu > ul  li.pro-menu-item {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0px;
+        cursor: pointer;
+        span{
+            svg{
+            width: 20px;
+            height: 20px;
+            path{
+                fill: $text-other;
+            }
+            }
+        }
+
+}
+.pro-menu .pro-item-content .sub-icon{
+    svg{
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.pro-sidebar .pro-menu .pro-menu-item.pro-sub-menu > .pro-inner-item > .pro-arrow-wrapper .pro-arrow {
+    border-color: #f0f0f0;
+}
+
+.pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper{
+    background: transparent;
+    border-radius: 8px;
+    margin-right: 10px;
+    min-width: 50px;
+    line-height: 35px;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    @include set-flex(center, center, unset);
+    border-radius: 8px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+
+.pro-menu-item.active > .pro-inner-item > .pro-item-content{
+    color: $pure-white!important;
+}
+.pro-sidebar .pro-menu.shaped .pro-menu-item:hover > .pro-inner-item > .pro-icon-wrapper > .pro-icon > svg > path,
+.pro-menu-item .active > .pro-inner-item,
+.pro-menu-item.active > .pro-inner-item > .pro-icon-wrapper > .pro-icon > svg > path,
+.pro-sub-menu:hover > .pro-inner-item > .pro-icon-wrapper > .pro-icon > svg > path,
+.custom-menu-item:hover .pro-inner-item > .pro-icon-wrapper > .pro-icon > svg > path,
+.pro-sub-menu.active > .pro-inner-item > .pro-icon-wrapper > .pro-icon > svg > path{
+    fill: $primary-color!important;
+}
+
+.pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item.pro-sub-menu > .pro-inner-list-item {
+    border-radius: 8px;
+}
+.pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item.pro-sub-menu > .pro-inner-list-item > .popper-inner {
+    padding-left: 0px;
+    margin-left: 15px;
+    border-radius: 10px;
+    @include set-font($color: $pure-white);
+    box-shadow: -1px -1px 15px -2px #0000001a;
+    @include set-background($color: $primary-color);
+    &:hover{
+        color: $pure-black;
+    }
+}
+
+
+
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover{
+    color: $primary-color;
+}
+.pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item:hover .pro-icon-wrapper .pro-icon,
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover .pro-icon-wrapper .pro-icon,
+.pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item.pro-sub-menu:hover .pro-icon-wrapper .pro-icon {
+    animation: ease-in-out 0.5s 1 alternate!important;
+}
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item ,
+.pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item.pro-sub-menu .pro-inner-list-item .pro-inner-item {
+    padding: 8px 10px 8px 10px;
+}
+
+.pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item.pro-sub-menu > .pro-inner-list-item > .popper-inner:before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #3766e8;
+    transform: rotate(45deg);
+    top: 40%;
+    left: 13px;
+    box-shadow: -1px -1px 45px 5px #3939391f;
+    z-index: -1;
+}
+.pro-sidebar .pro-menu .pro-menu-item.pro-sub-menu .pro-inner-list-item .pro-inner-item:before{
+    content: unset;
+    display: none;
+}
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-item-content{
+    margin: 0 auto;
+    font-size: 10px;
+    color: $pure-white;
+}
+
+#sidebar-fixed.active .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-item-content{
+    margin: 0 auto;
+    font-size: 14px;
+    color: $pure-white;
+}
+
+
+
+#sidebar-fixed .pro-sidebar .pro-menu .pro-menu-item,
+#sidebar-fixed .pro-sidebar .pro-menu .pro-menu-item.pro-sub-menu{
+    // border-left: 4px solid transparent;
+}
+
+#sidebar-fixed .pro-sidebar .pro-menu .pro-menu-item.active::before{
+    background-color: $gray;
+    border-left: 4px solid $primary-color;
+    .pro-inner-list-item{
+        ul{
+            li.pro-menu-item{
+                border-left: 0px; 
+                &.active,
+                &:hover{
+                background-color: $primary-color-dark;  
+                .pro-inner-item{
+                        .pro-item-content{
+                            color: $pure-white!important;
+                        }
+                    }           
+                }             
+            }
+            
+        }
+    }
+}
+
+#sidebar-fixed .pro-sidebar .pro-menu.shaped .pro-menu-item.pro-sub-menu .pro-inner-list-item{
+        ul{
+            li.pro-menu-item{
+                &:hover{
+                background-color: $primary-color-dark;  
+                .pro-inner-item{
+                        .pro-item-content{
+                            color: $pure-white!important;
+                        }
+                    }           
+                }
+            }
+        }
+    }
+
+#sidebar-fixed .pro-sidebar .pro-menu.shaped .pro-menu-item:hover > .pro-inner-list-item > .popper-inner > ul > li.pro-menu-item > .pro-inner-item > span.pro-item-content{
+    color: $gray!important;
+    font-size: 14px;
+}
+
+#sidebar-fixed .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-content{
+    padding-top: 10px;
+}
+
+#sidebar-fixed .pro-sidebar .pro-menu {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+// Sidebar Menu Text
+.pro-sidebar.collapsed .pro-menu .pro-menu-item > .pro-inner-item > .pro-item-content{
+    color: $text-other;
+}
+
+.pro-sidebar .pro-menu.shaped .pro-menu-item:hover > .pro-inner-item > span.pro-item-content{
+    color: $primary-color!important;
+    opacity: 1;
+}
+
+.pro-sidebar.collapsed .pro-menu .pro-menu-item.active > .pro-inner-item > .pro-item-content{
+    color: $primary-color!important;
+    opacity: 1;
+}
+
+// Sub-Menu
+
+.pro-sidebar .pro-menu ul li > .pro-inner-item span.pro-item-content{
+    opacity: 1;
+}
+
+.pro-sidebar .pro-menu ul li > .pro-inner-list-item span.pro-item-content{
+    opacity: 1;
+}
+
+#sidebar-fixed .pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item.pro-sub-menu > .pro-inner-list-item{
+    min-width: 150px;
+    max-width: 200px;
+}
+
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-icon-wrapper{
+    width: 50px;
+    min-width: 35px;
+    height: 20px;
+}
+
+
+.link-title > .pro-inner-item{
+    padding:8px 0px 8px 0px !important;
+    border-bottom: 1px solid #CED4DA;
+    margin: 0px 30px 5px;
+}
+.link-title > .pro-inner-item span{
+    margin-left: 0px!important;
+    color: #545454;
+    font-size: 14px!important;
+}
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item > div > ul {
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+}
+
+.pro-sidebar .pro-menu a,
+.pro-sidebar .pro-menu .pro-sub-menu > .pro-inner-item > .pro-item-content,
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item,
+.mobile-nav .pro-sidebar .pro-menu a{
+    color: $text-other!important;
+}
+
+
+
+.pro-sidebar .pro-menu .pro-menu-item.pro-sub-menu .pro-inner-list-item .pro-inner-item {
+    padding: 8px 20px 8px 20px !important;
+    // margin: 8px 30px 8px 30px;
+    border-radius: 2px;
+}
+
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item{
+    background-color: $primary-color!important;
+}
+.pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item.pro-sub-menu:hover > .pro-inner-list-item{
+    background-color: transparent!important;
+}
+
+
+
+/*
+ *  Collapsed menu
+ */
+ .pro-sidebar.collapsed .pro-menu .pro-menu-item > .pro-inner-item > .pro-item-content > .sub-icon,
+.pro-sidebar.collapsed .pro-inner-list-item .popper-inner ul > li.link-title{
+    display: block;
+}
+.pro-sidebar.collapsed .pro-menu .pro-menu-item > .pro-inner-item > .pro-item-content > .sub-icon,
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-sidebar-content .pro-menu ul > li.pro-sub-menu > .react-slidedown.pro-inner-list-item div ul li.link-title{
+    display: none;
+}
+
+/*
+ *  Sidebar Layput
+ */
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout
+{
+	overflow-y: auto;
+}
+
+/*
+ *  scroll
+ */
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgb(255, 255, 255);
+	background-color: $pure-white;
+}
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout::-webkit-scrollbar{
+    display: none;
+}
+
+#sidebar-fixed.active .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout::-webkit-scrollbar
+{
+	width: 6px;
+    display: block;
+    border-radius: 50px;
+	background-color: $pure-white;
+}
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout::-webkit-scrollbar-thumb
+{
+	background-color:$gray;
+}
+
+#sidebar-fixed .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item{
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+    min-width: 72px;
+    text-align: center;
+}
+
+#sidebar-fixed.active .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item{
+    display: flex;
+    text-align: left;
+}
+
+.pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item.pro-sub-menu .pro-inner-list-item .pro-sub-menu-item, .pro-sidebar.collapsed .pro-menu > ul > .pro-menu-item.pro-sub-menu .pro-inner-list-item .pro-inner-item{
+    text-align: left!important;
+    @include set-margin($bottom: 1px!important);
+}
+
+#sidebar-fixed .pro-sidebar.collapsed .pro-menu .pro-menu-item > .pro-inner-item > .pro-item-content{
+    @include set-font($size: 12px);
+    white-space: break-spaces;
+    display: block;
+    word-break: break-all;
+}
+
+#sidebar-fixed .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-icon-wrapper {
+    margin-right: 0px;
+    margin-bottom: 2px;
+    width: 100%;
+}
+
+
+#sidebar-fixed .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header{
+    border-bottom: 1px solid rgba(173, 173, 173, 0.2);
+}
+#sidebar-fixed .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-footer{
+    border-top: 1px solid rgba(173, 173, 173, 0.2);
+}
+

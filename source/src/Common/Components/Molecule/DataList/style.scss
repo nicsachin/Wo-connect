@@ -1,0 +1,44 @@
+@import "../../../../Sass/variables";
+
+.data-table-list{
+      .data-title, .data-string{
+        @include set-font($size: 14px, $weight: 400);
+      }
+
+      .data-title {
+        @include set-font($color: $text-other);
+      }
+      
+      .data-string {
+        @include set-font($color: $text-primary);
+      }
+}
+
+.data-table-list {
+    .data-title, .data-string{
+      @include set-padding($bottom: 16px);
+    }
+
+    .data-title {
+      @include set-padding($right: 72px);
+    }
+}
+
+.open-link {
+
+  svg {
+    @include set-margin($left: 6px);
+      path {
+          fill: $primary-color;
+          fill-opacity: 1;
+      }
+  }
+  &:hover {
+      svg {
+          path {
+              fill: $primary-color-dark;
+              fill-opacity: 1;
+          }
+      }
+  }
+}

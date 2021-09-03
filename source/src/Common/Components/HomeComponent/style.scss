@@ -1,0 +1,205 @@
+@import "../../../Sass/colors";
+
+.card-block {
+  box-sizing: border-box;
+  border: 2px solid $gray;
+  padding: 26px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 6px 6px 30px rgba(157, 157, 157, 0.11);
+  transition: all 0.2s ease-in-out;
+  min-height: 215px;
+  
+  .title-block {
+    display: flex;
+    align-items: end;
+    margin-bottom: 20px;
+    .icon-block {
+      display: block;
+      box-sizing: content-box;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: "${props.obj.iconBgColor}";
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .content-block {
+      display: block;
+      margin-left: 10px;
+    }
+  }
+  .bottom-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    a {
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+    span {
+      color: $text-tertiary;
+    }
+  }
+}
+
+.blue-card-active{
+  border-color: $primary-color;
+}
+
+.orange-card-active{
+  border-color:  $brand-orange;
+}
+
+.green-card-active{
+  border-color: $green-success;
+}
+
+.icon-bg-lightblue {
+  background: rgba(55, 102, 232, 0.2);
+  svg {
+    path {
+      fill: $primary-color;
+    }
+  }
+}
+
+.icon-bg-lightorange {
+  background: rgba(255, 126, 23, 0.2);
+  svg {
+    path {
+      fill: $brand-orange;
+    }
+  }
+}
+
+.icon-bg-lightpink {
+  background: rgba(255, 135, 157, 0.2);
+  svg {
+    path {
+      fill: $brand-pink;
+    }
+  }
+}
+
+.icon-bg-lightgreen {
+  background: rgba(3, 176, 180, 0.2);
+  svg {
+    path {
+      fill: $green-success;
+    }
+  }
+}
+
+.icon-bg-lightpurple {
+  background: rgba(144, 119, 247, 0.2);
+  svg {
+    path {
+      fill: $brand-purple;
+    }
+  }
+}
+
+.icon-bg-lightyellow {
+  background: rgba(255, 193, 7, 0.2);
+  svg {
+    path {
+      fill: $yellow-warning;
+    }
+  }
+}
+
+.btn-blue-color {
+  a {
+    color: $primary-color;
+    svg {
+      path {
+        fill: $primary-color;
+      }
+    }
+  }
+}
+
+.btn-orange-color {
+  a {
+    color: $brand-orange;
+    svg {
+      path {
+        fill: $brand-orange;
+      }
+    }
+  }
+}
+
+.btn-pink-color {
+  a {
+    color: $brand-pink;
+    svg {
+      path {
+        fill: $brand-pink;
+      }
+    }
+  }
+}
+
+.btn-green-color {
+  a {
+    color: $green-success;
+    svg {
+      path {
+        fill: $green-success;
+      }
+    }
+  }
+}
+
+.btn-purple-color {
+  a {
+    color: $brand-purple;
+    svg {
+      path {
+        fill: $brand-purple;
+      }
+    }
+  }
+}
+
+.btn-yellow-color {
+  a {
+    color: $yellow-warning;
+    svg {
+      path {
+        fill: $yellow-warning;
+      }
+    }
+  }
+}
+
+.border-blue:hover {
+  border-color: $primary-color;
+  transform: scale(1.01);
+}
+.border-orange:hover {
+  border-color: $brand-orange;
+  transform: scale(1.01);
+}
+.border-pink:hover {
+  border-color: $brand-pink;
+  transform: scale(1.01);
+}
+.border-purple:hover {
+  border-color: $brand-purple;
+  transform: scale(1.01);
+}
+.border-green:hover {
+  border-color: $green-success;
+  transform: scale(1.01);
+}
+.border-yellow:hover {
+  border-color: $yellow-warning;
+  transform: scale(1.01);
+}

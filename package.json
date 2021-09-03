@@ -1,0 +1,44 @@
+{
+  "name": "Wo-connect",
+  "version": "1.0.0",
+  "description": "Wo-connect is a utility tool by Wobot to easily connect your existing cameras from your local network.",
+  "author": "Sachin <sachinfromwobot@gmail.com>",
+  "homepage": "./",
+  "repository" : "git@github.com:sachinfromwobot/Wo-connect.git",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd source && npm start",
+    "electron": "electron .",
+    "build": "electron-builder --linux deb -w",
+    "linux": "electron-builder --linux deb",
+    "windows": "electron-builder -w",
+    "watch": "nodemon --watch . --exec \"electron .\"" ,
+    "pack" : "electron-builder --dir",
+    "gh-publish" : "electron-builder  -w -p always"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "electron-is-dev": "^2.0.0",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-ffprobe-static": "^4.3.1-rc.6",
+    "fluent-ffmpeg": "^2.1.2",
+    "uuid": "^8.3.2"
+  },
+  "build": {
+    "asarUnpack": [
+      "node_modules/ffmpeg-ffprobe-static/bin/${os}/${arch}/ffmpeg",
+      "node_modules/ffmpeg-ffprobe-static/bin/${os}/${arch}/ffprobe",
+      "node_modules/ffmpeg-ffprobe-static/index.js",
+      "node_modules/ffmpeg-ffprobe-static/package.json"
+    ],
+    "extraResources": [
+      "rtsp-simple-server"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^13.2.1",
+    "electron-builder": "^22.11.7"
+  }
+}

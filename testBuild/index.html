@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>woconnect</title>
+</head>
+<body>
+<input type="text" placeholder="enter your rtsp" id="rtsp"></input><br>
+<button onClick="getFrame()"> Get frame</button>
+<button onClick="getCodec()"> Get codec</button>
+<button onclick="installServer()">Install server</button>
+
+
+
+
+<script>
+
+    function getCodec(){
+        const electron = window.require('electron');
+
+        //fire events to electron
+        electron.ipcRenderer.send("codec" , {rtsp : document.querySelector("#rtsp").value});
+
+        electron.ipcRenderer.on("response" , (res , args)=>{
+            console.log("response is"  , args)
+        })
+
+    }
+
+
+
+    function getFrame(){
+        const electron = window.require('electron');
+
+        //fire events to electron
+        electron.ipcRenderer.send("frame" , {rtsp : document.querySelector("#rtsp").value});
+
+        electron.ipcRenderer.on("response" , (res , args)=>{
+
+            if(args.tag) {
+                var img = document.createElement('img');
+                img.src = args.tag;
+                document.querySelector('body').appendChild(img);
+
+            }
+            console.log("response is"  , args)
+        })
+
+    }
+
+    function installServer(){
+        const electron = window.require('electron');
+        //fire events to electron
+        electron.ipcRenderer.send("install");
+        electron.ipcRenderer.on("response" , (res , args)=>{
+            var img = document.createElement('img');
+            img.src = args;
+            document.querySelector('body').appendChild(img);
+
+            // console.log("response is"  , args)
+        })
+    }
+
+
+</script>
+
+</body>
+</html>

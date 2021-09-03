@@ -1,0 +1,62 @@
+@import "../../../../Sass/variables";
+.title-block{
+    margin-bottom: 40px;
+}
+
+.row-bg{
+    background: $off-white;
+    padding: 20px 15px;
+    border-radius: 8px;
+}
+
+.padding-y{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.btn-close{
+    svg{
+        width: 28px;
+        height: 28px;
+        circle{
+            fill: $red-failure;
+        }
+        path{
+            fill: $red-failure;
+        }
+    }
+}
+
+.auth-location-list{
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+}
+.action-block-btn{
+    margin: auto 0;
+}
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+.sub-title{
+    width: 450px;
+    margin: 0 auto;
+}
+.box-modal-heading{
+    text-align: center;
+    @include set-margin($bottom: 30px);
+    .box-modal-title{
+        @include set-font($size: 26px, $weight: 600, $color: $text-primary);
+    }
+}
+.dropzone{
+    padding: 40px;
+    border: 2px dashed #CED4DA;
+    text-align: center;
+    background: #F9F9F9;
+    border-radius: 4px;
+    cursor: pointer;
+}

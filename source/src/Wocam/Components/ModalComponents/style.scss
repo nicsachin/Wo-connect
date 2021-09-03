@@ -1,0 +1,102 @@
+@import "../../../Sass/variables";
+
+.info-block {
+  @include set-flex($justify-content: end, $align-items: baseline);
+  @include set-padding-all($padding: 10px);
+  @include set-background($color: $pure-white);
+  span {
+    @include set-margin($right: 5px);
+  }
+}
+
+.schedule-tag-block {
+  .schedule-tag {
+    @include set-padding($top: 8px, $bottom: 8px, $right: 10px, $left: 10px);
+    @include set-background($color: $pure-white);
+    border-radius: 25px;
+    @include set-margin($bottom: 10px);
+    button {
+      @include set-padding-all($padding: 0px);
+      @include set-margin($left: 5px);
+    }
+    .checkbox {
+      @include set-margin($bottom: 0px!important, $top: 0px!important);
+      label {
+        @include set-margin($bottom: 0px!important);
+        input[type="checkbox"] + .box.inline:after {
+          top: 0px;
+          width: 15px;
+          height: 15px;
+        }
+        input[type="checkbox"]:checked + .box.inline:before {
+          top: 1px;
+          left: 9px;
+        }
+      }
+      .checkbox-label {
+        word-break: break-word;
+        @include set-font($size: 14px, $weight: 400, $color: $text-primary);
+      }
+    }
+    .info-popup {
+      svg {
+        width: 14px;
+        height: auto;
+        path {
+          fill: $text-tertiary;
+        }
+      }
+    }
+  }
+}
+
+.type-select {
+  .nav-pills {
+    .nav-link {
+      display: block;
+      @include set-padding($top: 4px, $bottom: 4px, $right: 8px, $left: 8px);
+      @include set-background($color: $gray);
+      @include set-margin($right: 5px);
+      @include set-font($color: $text-primary, $weight: 400);
+      &.active {
+        @include set-font($color: $pure-white, $weight: 400);
+        @include set-background($color: $primary-color);
+      }
+    }
+  }
+}
+
+.refetch-cam-list {
+  li {
+    padding: 6px 12px;
+    background: #fff;
+    border-radius: 50px;
+    display: flex;
+    margin-bottom: 10px;
+  }
+}
+.fetchCameraContainer {
+  @include set-flex($justify-content: space-between);
+}
+
+.divider {
+  border-top: 1px solid #f0f0f0;
+  padding-bottom: 12px;
+}
+
+#popover-basic {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.schedule-popup {
+  .schedule-day {
+    li {
+      font-weight: 500;
+      color: $text-other;
+      &.active {
+        color: $primary-color;
+      }
+    }
+  }
+}

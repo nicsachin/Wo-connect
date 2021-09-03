@@ -1,0 +1,9 @@
+@import "../../../../Sass/variables";
+
+.action-block{
+  @include set-flex($justify-content: space-between, $align-items: center, $align-self: unset);
+  @include set-margin($top: 20px);
+    .input-block{
+      @include set-dimensions($width: 250px);
+    }
+}

@@ -1,0 +1,76 @@
+@import "../../../../Sass/variables";
+.signup-left-block{
+    background-color: $primary-color-dark;
+    @include set-dimensions($min-height:100vh, $width:100%);
+    @include set-flex( $justify-content:center);
+.signup-left-wrapper{
+  @include set-flex( $direction:column,$align-items:flex-start);
+  .logo-singup{
+    @include  set-margin($top: 30px, $right: 30px, $bottom: 0px, $left: 30px);
+   
+  }
+ 
+  .singup-left-content{
+      display: block;
+      @include  set-padding-all($padding: 36px);
+      @include set-flex( $direction:column,$align-items:flex-start);
+      
+      .middle-img{
+        @include set-margin($bottom: 16px);
+      //  padding:0px 40px;
+       @include set-dimensions($width:100%, $height:auto);
+        text-align: center;
+      }
+      .singup-content-wrapper{ 
+          .singup-content-heading{
+            margin:0 auto;
+            color: $pure-white;
+           @include set-margin($bottom: 20px);
+          }       
+      }
+  
+  
+.singup-bullet-list{
+    @include set-margin($top: 20px);
+    li{
+        @include set-flex( $justify-content:flex-start,$align-items:flex-start);
+        @include set-margin($bottom: 8px);
+        .signup-list-icon{   
+            .signup-icon-svg{
+              @include set-dimensions( $width:20px,$height:20px);         
+            }
+        }
+             
+             .signup-list-para{
+              @include set-margin($left: 16px);
+              @include set-margin($bottom: 8px);
+                  color: $pure-white;                
+                  @include set-dimensions( $max-width:400px);
+                  @include set-font($weight:300);
+                 }                              
+      }
+   }
+  }
+}
+}
+
+@media  (min-width: 1800px){
+  .signup-left-wrapper{
+  .logo-singup{
+      position: relative !important;
+      top:-230px !important;
+      left: 40px;
+  }
+}
+}
+
+@media (max-width: 991px) {
+  .signup-left-wrapper{
+ .logo-singup{
+  display: none;
+  padding-top: 0px !important;
+ }
+}
+}
+
+

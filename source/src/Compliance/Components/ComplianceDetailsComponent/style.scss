@@ -1,0 +1,47 @@
+.activity-wrapper{
+    padding: 45px 30px;
+    border-radius: 12px;
+    .activity-block{
+        padding: 15px 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .activity-body{
+        padding: 15px 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        p{
+            font-weight: 200;
+        }
+        ul{
+            li{
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.br-14{
+    border-radius: 14px;
+}
+
+.tab-pane{
+    .video-block{
+        .video-popup{
+            height: auto!important;
+        }
+    }
+}
+
+
+/* Screen Size - 592px */
+@media (max-width: 592px) {
+    .activity-wrapper{
+        padding: 25px 20px;
+        .activity-body{
+        display: block;
+        }
+    } 
+}

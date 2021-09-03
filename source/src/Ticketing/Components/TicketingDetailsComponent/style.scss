@@ -1,0 +1,142 @@
+@import "../../../Sass/variables";
+
+.activity-wrapper{
+    padding: 45px 30px;
+    border-radius: 12px;
+    .activity-block{
+        padding: 15px 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .activity-body{
+        padding: 15px 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        p{
+            font-weight: 200;
+        }
+        ul{
+            li{
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.br-4{
+    border-radius: 4px;
+}
+
+.video-block{
+    .video-popup{
+        height: auto!important;
+    }
+}
+
+.btn-primary.btn-round-icon{
+    span{
+        svg{
+            path{
+                fill: $pure-white;
+            }
+        }
+    }
+}
+
+.element-block-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+}
+
+.form-size-sm{
+    @include set-flex($justify-content: space-between);
+    width: 110px;
+}
+
+.calender-icon{
+    cursor: pointer;
+    &::after{
+        margin-left: 0px;
+        content: url("data:image/svg+xml;charset=UTF-8,<svg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1.41 0.589966L6 5.16997L10.59 0.589966L12 1.99997L6 7.99997L0 1.99997L1.41 0.589966Z' fill='gray'/></svg>");
+    }
+    .rdtPicker {
+        right: 0;
+        left: auto;
+    }
+    input{
+        &:focus{
+        border-color: transparent;
+        background: transparent;
+        box-shadow: 0 0 0 1px transparent;
+        }
+    }
+}
+
+.tab-element{
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    .react-tabs__tab-list{
+        margin-bottom: 0px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid transparent;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        width: auto;
+        .react-tabs__tab{
+            background: transparent;
+            border: solid #ced4da;
+            border-width: 0px 0 2px;
+            color: $text-other;
+            font-weight: 500;
+            text-transform: capitalize;
+            border-radius: 0;
+            padding: 0 25px 4px;
+            margin: 0;
+            &.react-tabs__tab--selected{
+                border-bottom: 2px solid;
+                border-color: $primary-color;
+                color: $primary-color;
+            }
+            &:focus {
+                box-shadow: 0 0 5px transparent;
+                outline: none;
+            }
+        }
+    &::-webkit-scrollbar {
+        height: 5px;  /* height of horizontal scrollbar ← You're missing this */
+        width: 5px;   /* width of vertical scrollbar */
+        border: 1px solid transparent;
+        }
+    &::-webkit-scrollbar-track {
+        border-radius: 50px;
+        background: transparent;
+        }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 50px;
+        background: #b0b0b0;
+        } 
+    }
+    .react-tabs__tab:focus:after{
+        content: none;
+    }
+    label{
+        margin-right: 15px;
+    }
+}
+
+/* Screen Size - 592px */
+@media (max-width: 592px) {
+    .activity-wrapper{
+        padding: 25px 20px;
+        .activity-body{
+        display: block;
+        }
+    } 
+}

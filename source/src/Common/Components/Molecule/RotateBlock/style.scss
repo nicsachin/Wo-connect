@@ -1,0 +1,98 @@
+@import "../../../../Sass/variables";
+
+.auth-root {
+  @include set-dimensions($height: auto, $min-height: 100vh);
+  @include set-background($color: $off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-header {
+  // @include set-padding-all($padding:30px);
+  @include set-margin(40px, 32px, 0px, 32px);
+  @include set-flex($justify-content: unset, $align-items: start);
+  @include set-dimensions($width: 100%);
+  width: 100%;
+  z-index: 1;
+}
+
+.logo-box {
+  position: absolute;
+  z-index: 1;
+}
+
+.auth-box-wrapper {
+  @include set-margin($top: 40px);
+  @include set-dimensions($width: 480px, $max-width: 100%);
+  &.wrapper-fw{
+    @include set-dimensions($width: 100%, $max-width: 100%);
+  }
+}
+
+
+
+.content-header {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+@media screen and (max-width: 991px){
+    .content-header {
+      margin: 60px auto 0;
+    }
+  }
+
+.auth-layout {
+  @include set-flex($direction: column, $justify-content: start);
+  // @include set-background($color: $auth-bg);
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.box-rotate-fixed {
+  position: absolute;
+  @include set-dimensions($height: 420px);
+  left: 0;
+  right: 0;
+  top: 16%;
+  bottom: 0;
+  z-index: 0;
+  transform: skewY(-30deg);
+
+  @media screen and (max-width: 720px) {
+    top: 120px;
+  }
+
+  .box-strip-bottom-left {
+    left: 0;
+    @include set-dimensions($max-width: 44%, $width: 100%);
+    border-top: 8px solid $primary-extra-light-focused;
+  }
+
+  .box-strip-top-right {
+    right: 0;
+    @include set-dimensions($max-width: 44%, $width: 100%);
+    border-bottom: 8px solid $primary-extra-light-focused;
+  }
+
+  .box-strip-middle {
+    // top: 50%;
+    @include set-dimensions($width: 100%);
+  }
+
+  .box-strip {
+    position: absolute;
+    height: 400px;
+    background-color: #f5f5f5;
+  }
+}
+.content-box {
+  box-sizing: border-box;
+  padding-top: 0px;
+  z-index: 0;
+  position: relative;
+  height: 100%;
+  //  @include set-flex($justify-content: center, $direction: row);
+}

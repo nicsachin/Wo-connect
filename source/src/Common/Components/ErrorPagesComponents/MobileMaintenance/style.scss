@@ -1,0 +1,19 @@
+@import "../../../../Sass/variables";
+
+.wobot {
+  .wobot-text-style {
+    @include set-dimensions($width: 65px, $height: 37px);
+    margin: 45px 0px;
+  }
+}
+
+.app-icons {
+  @include set-flex($justify-content: center);
+  margin: 50px 0px;
+  .app-icon-block {
+    @include set-dimensions($width: 55px, $height: 55px);
+    @include set-background($color: #f0f0f0);
+    @include set-flex($justify-content: center, $align-items: center);
+    border-radius: 50%;
+  }
+}

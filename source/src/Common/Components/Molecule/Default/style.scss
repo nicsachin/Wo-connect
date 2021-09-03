@@ -1,0 +1,7 @@
+@import "../../../../Sass/variables";
+
+.default-img-block {
+  @include set-margin($bottom: 25px);
+}
+
+

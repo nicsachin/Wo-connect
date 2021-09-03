@@ -1,0 +1,177 @@
+@import "../../../Sass/variables";
+
+
+
+
+.go-back {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(55, 102, 232, 0.1);
+}
+.inner-block {
+  display: flex;
+  justify-content: space-between;
+}
+.tagger-action {
+  overflow: auto;
+  height: 300px;
+  li {
+    @include set-margin($bottom: 8px, $right: 0px!important);
+    @include set-background($color: $pure-white);
+    @include set-border($radius: 4px);
+    @include set-padding($right: 12px, $left: 12px, $top: 8px, $bottom: 8px);
+    .text-block {
+      word-break: break-word;
+      max-width: 300px;
+    }
+  }
+}
+
+.video-controls-block{
+  @include set-flex($justify-content: space-between, $align-items: center);
+  margin-bottom: 15px;
+  .play-icon{
+    width: 28px;
+    height: 28px;
+    background-color: #ffffff;
+    display: inline-flex;
+    text-align: center;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    svg{
+      margin-right: 0px;
+    }
+  }
+}
+
+.tagger-video-popup {
+    .meta-data {
+        .output {
+            @include set-background($pure-white);
+            @include set-padding($top: 13px, $bottom:13px, $left:12px, $right:12px);
+            margin: 0px 10px 10px 0px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                max-width: 350px;
+                word-wrap: break-word;
+                cursor: pointer;
+            }
+        }
+        .data {
+            max-height: 210px;
+            overflow: hidden;
+            overflow-y: auto;
+            height: 210px;
+            p{
+                margin-left: 15px;
+            }
+            li{
+                ul{
+                    li{
+                        margin-right: 15px;
+                        text-align: center;
+                        &:last-child{
+                            margin-right: 0px;
+                        }
+                    }
+                }
+            }
+            &::-webkit-scrollbar-track{
+                -webkit-box-shadow: inset 0 0 6px #ffffff;
+                background-color: #e0e0e0;
+            }
+            &::-webkit-scrollbar{
+                width: 6px;
+                border-radius: 50px;
+                background-color: $pure-white;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color:#b8b6b6;
+            }
+        }
+      }
+    }
+
+
+.block-wrap {
+  .title {
+    @include set-font($size: 16px, $weight: 600, $color: $text-primary);
+  }
+}
+
+.video-popup {
+  video {
+    @include set-border($radius: 4px);
+  }
+  @include set-margin($bottom: 20px);
+}
+
+.control-block {
+  @include set-flex($justify-content: flex-start, $align-items: center);
+  @include set-margin($bottom: 40px);
+  span {
+    @include set-font($size: 14px, $weight: 400, $color: $text-tertiary);
+  }
+  .btn-xs {
+    @include set-padding($top: 4px, $bottom: 4px, $left: 6px, $right: 6px);
+    @include set-background($color: $pure-white);
+    @include set-font($size: 12px, $color: $text-tertiary);
+    width: 50px;
+    height: auto;
+    &:hover {
+      @include set-background($color: $gray);
+    }
+    &.btn-active {
+      @include set-background($color: $text-primary);
+      @include set-font($color: $pure-white);
+    }
+  }
+}
+
+.btn-bg-icon {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(55, 102, 232, 0.2);
+  border-radius: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  svg {
+    width: 11px;
+    height: 11px;
+    path {
+      fill: $primary-color;
+    }
+  }
+}
+
+
+
+.action-block{
+    .btn-light{
+        svg{
+            width: 12px;
+            height: auto;
+            path{
+                fill: $primary-color;
+            }
+        }
+    }
+}
+ 
+
+/* Screen Size - 766px */
+@media (max-width: 768px) {
+  .video-block {
+    margin-top: 20px;
+  }
+}

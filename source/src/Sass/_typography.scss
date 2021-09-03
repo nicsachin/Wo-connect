@@ -1,0 +1,235 @@
+@import "colors";
+@import "fonts";
+// -----------------------------------------------------------------------------
+// This file contains all @typogrpahy declarations.
+// -----------------------------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading-primary;
+    margin: 0 0 20px;
+    font-family: $primary-font;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 15px;
+    font-family: $secondary-font;
+    color: $text-primary;
+}
+
+caption, .caption{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.41px;
+    color: $text-tertiary;
+    .small {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15.18px;
+        color: $text-tertiary;
+    }
+}
+
+/* Font-Size */
+.fs-7{
+    font-size: 7px;
+}
+
+.fs-10{
+    font-size: 10px;
+}
+
+.fs-11{
+    font-size: 11px;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-22 {
+    font-size: 22px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.fs-26 {
+    font-size: 26px;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.fs-30 {
+    font-size: 30px;
+}
+
+.fs-32 {
+    font-size: 32px;
+}
+
+.fs-34 {
+    font-size: 34px;
+}
+
+.fs-36 {
+    font-size: 36px;
+}
+
+.fs-38 {
+    font-size: 38px;
+}
+
+.fs-40 {
+    font-size: 40px;
+}
+
+/* Font-weight */
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+b, strong{
+    font-weight: bold;
+}
+
+// Max width
+.mxw-50{
+    max-width: 50px;
+}
+
+.mxw-100{
+    max-width: 100px;
+}
+
+.mxw-150{
+    max-width: 150px;
+}
+
+.mxw-200{
+    max-width: 200px;
+}
+
+.mxw-250{
+    max-width: 250px;
+}
+
+.mxw-300{
+    max-width: 300px;
+}
+
+.mxw-350{
+    max-width: 350px;
+}
+
+.mxw-400{
+    max-width: 400px;
+}
+
+.mxw-450{
+    max-width: 450px;
+}
+
+.mxw-500{
+    max-width: 500px;
+}
+
+.mxw-550{
+    max-width: 550px;
+}
+
+.mxw-600{
+    max-width: 600px;
+}
+
+.mxw-650{
+    max-width: 650px;
+}
+
+.mxw-700{
+    max-width: 700px;
+}
+
+.mxw-750{
+    max-width: 750px;
+}
+
+.mxw-800{
+    max-width: 800px;
+}
+
+.mxw-850{
+    max-width: 850px;
+}

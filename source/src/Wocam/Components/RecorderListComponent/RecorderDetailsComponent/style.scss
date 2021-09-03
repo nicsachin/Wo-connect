@@ -1,0 +1,85 @@
+@import "../../../../Sass/variables";
+
+.go-back {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(55, 102, 232, 0.1);
+}
+.inner-flex-block {
+  display: flex;
+  justify-content: space-between;
+  .info-block {
+    overflow: hidden;
+    max-width: 215px;
+    margin-right: 10px;
+    .add-info-block {
+      .link {
+        max-width: 150px;
+        word-break: break-all;
+        font-size: 12px;
+      }
+    }
+  }
+  .thumb-block {
+    width: 100%;
+    height: auto;
+    background-color: #ccc;
+  }
+}
+.block-wrapper {
+  .title-block {
+    svg {
+      path {
+        fill: $pure-black;
+      }
+    }
+  }
+}
+
+.hover-link:hover {
+  h6 {
+    color: $primary-color;
+  }
+  span {
+    svg {
+      path {
+        fill: $primary-color;
+      }
+    }
+  }
+}
+
+
+
+/* Screen Size - 766px */
+@media (max-width: 768px) {
+  .video-block {
+    margin-top: 20px;
+  }
+  .block-wrapper {
+    .conn-details {
+      display: block;
+      li {
+        margin-bottom: 20px;
+      }
+    }
+    .inner-meta-data {
+      ul {
+        li {
+          display: grid;
+          span {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rtsp-cursor {
+  cursor: pointer;
+}

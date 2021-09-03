@@ -1,0 +1,39 @@
+@import "../../../../Main";
+
+.overflow-h {
+  overflow: hidden;
+}
+.overflow-a {
+  overflow: auto;
+}
+
+.video-wrapper-block{
+    .layout{
+        .react-grid-item{
+            width: 100%!important;
+            height: 530px!important;
+            max-height: 550px;
+        }
+    }
+  }
+.filter-Camera-box {
+  position: absolute;
+  z-index: 1;
+  width: 85%;
+  padding-left: 38%;
+  //   padding-right: 20%;
+}
+
+@media (max-width: 768px) {
+  .video-block {
+    @include set-margin($top: 20px);
+  }
+}
+
+.camera-details-info-icon{
+    svg {
+        path {
+            fill : $gray-dark;
+        }
+    }
+}

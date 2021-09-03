@@ -1,0 +1,30 @@
+@import "../../../../../Sass/variables";
+
+.breadcrumb{
+    @include set-padding-all(0px);
+    @include set-margin($bottom: 8px);
+    @include set-font($size: 12px);
+    background: transparent!important;
+  li{
+    a:hover{
+      text-decoration: none;
+    }
+    &::after{
+        @include set-padding($left: 10px);
+        content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 24 24'><path d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' fill='gray'/></svg>");
+    }
+    &:last-child::after{
+        content: none;
+    }
+    svg{
+        @include set-dimensions($width: 12px, $height:auto);
+      path{
+        fill: #7c7272;
+      }
+    }
+    a.muted-link{
+      color: #7c7272;
+      cursor: default;
+    }
+  }
+}

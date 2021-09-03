@@ -1,0 +1,15 @@
+.camera-inactive-container {
+  background-color: #474646;
+  height: 100%;
+  padding: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.video-meta {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+}

@@ -1,0 +1,514 @@
+// -----------------------------------------------------------------------------
+// @mixin declarations.
+// -----------------------------------------------------------------------------
+@mixin set-font(
+  $family: null,
+  $size: null,
+  $style: null,
+  $weight: null,
+  $color: null,
+  $shadow: null
+) {
+  font-family: $family;
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  color: $color;
+  text-shadow: $shadow;
+}
+
+@mixin adjust-text(
+  $alignment: null,
+  $line-height: null,
+  $whiteSpace: null,
+  $letterSpacing: null,
+  $over-flow: null,
+  $transform: null
+) {
+  text-align: $alignment;
+  line-height: $line-height;
+  white-space: $whiteSpace;
+  letter-spacing: $letterSpacing;
+  text-overflow: $over-flow;
+  text-transform: $transform;
+}
+
+@mixin set-image($url: null, $size: null, $repeat: null, $position: null) {
+  background-image: url($url);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+
+@mixin set-dimensions(
+  $width: null,
+  $height: null,
+  $min-width: null,
+  $min-height: null,
+  $max-width: null,
+  $max-height: null,
+  $float: null
+) {
+  width: $width;
+  height: $height;
+  min-width: $min-width;
+  min-height: $min-height;
+  max-width: $max-width;
+  max-height: $max-height;
+  float: $float;
+}
+
+@mixin set-transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin set-background(
+  $background: null,
+  $color: null,
+  $image: null,
+  $size: null,
+  $repeat: null,
+  $position: null
+) {
+  background: $background;
+  background-color: $color;
+  background-image: $image;
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+
+@mixin set-margin($top: null, $right: null, $bottom: null, $left: null) {
+  @if ($top) {
+    margin-top: $top;
+  }
+  @if ($right) {
+    margin-right: $right;
+  }
+  @if ($bottom) {
+    margin-bottom: $bottom;
+  }
+  @if ($left) {
+    margin-left: $left;
+  }
+}
+
+@mixin set-padding($top: null, $right: null, $bottom: null, $left: null) {
+  @if ($top) {
+    padding-top: $top;
+  }
+  @if ($right) {
+    padding-right: $right;
+  }
+  @if ($bottom) {
+    padding-bottom: $bottom;
+  }
+  @if ($left) {
+    padding-left: $left;
+  }
+}
+
+@mixin set-padding-all($padding: null) {
+  padding: $padding;
+}
+
+@mixin set-border(
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $radius: null,
+  $top-color: null,
+  $right-color: null,
+  $bottom-color: null,
+  $left-color: null
+) {
+  border-top: $top;
+  border-right: $right;
+  border-bottom: $bottom;
+  border-left: $left;
+  border-radius: $radius;
+  border-top-color: $top-color;
+  border-right-color: $right-color;
+  border-bottom-color: $bottom-color;
+  border-left-color: $left-color;
+}
+
+@mixin set-depth($index: null, $overflow: null) {
+  z-index: $index;
+  overflow: $overflow;
+}
+
+@mixin set-border-all($border: null, $radius: null, $color: null) {
+  border: $border;
+  border-radius: $radius;
+  border-color: $color;
+}
+
+@mixin set-box-shadow($param) {
+  -webkit-box-shadow: $param;
+  -moz-box-shadow: $param;
+  box-shadow: $param;
+}
+
+// @mixin set-position ($position: null, $top: null, $right: null, $bottom: null, $left: null) {
+//   position: $position;
+//   top: $top;
+//   right: $right;
+//   bottom: $bottom;
+//   left: $left;
+// }
+
+@mixin set-transform($transform) {
+  transform: $transform;
+}
+
+@mixin set-origin($transform-origin: null) {
+  transform-origin: $transform-origin;
+}
+
+@mixin set-translate($x: 0, $y: 0) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+// @mixin set-flex ($direction: null, $justify-content: null, $align-items: null, $wrap: null, $flex: null, $order: null, $flow: null, $shrink: null) {
+//   display: flex;
+//   flex-direction: $direction;
+//   justify-content: $justify-content;
+//   align-items: $align-items;
+//   flex-wrap: $wrap;
+//   flex: $flex;
+//   order: $order;
+//   flex-flow: $flow;
+//   flex-shrink: $shrink;
+// }
+
+@mixin set-border-radius(
+  $top-left: null,
+  $bottom-left: null,
+  $top-right: null,
+  $bottom-right: null
+) {
+  border-top-left-radius: $top-left;
+  border-bottom-left-radius: $bottom-left;
+  border-top-right-radius: $top-right;
+  border-bottom-right-radius: $bottom-right;
+}
+@mixin set-border-radius-all($radius: null) {
+  border-radius: $radius;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin set-button(
+  $color: null,
+  $color-dark: null,
+  $border-color: null,
+  $family: $primary-font,
+  $font-color: $color-white,
+  $font-size: 1rem,
+  $font-weight: 600,
+  $transition: 0.2s,
+  $radius: 4px,
+  $padding: 6px
+) {
+  @include set-background($color: $color);
+  display: inline-block;
+  text-align: center;
+  @include set-padding-all($padding);
+
+  @if ($border-color) {
+    @include set-border-all($border: 1px solid $border-color, $radius: $radius);
+  } @else {
+    @include set-border-all($border: 1px solid $color, $radius: $radius);
+  }
+
+  @include set-font(
+    $family: $family,
+    $size: $font-size,
+    $weight: $font-weight,
+    $color: $font-color
+  );
+  @include set-transition($transition: $transition);
+
+  &:hover,
+  &:focus {
+    @include set-font($color: $font-color);
+    text-decoration: none;
+
+    @if ($color-dark) {
+      @include set-background($color: $color-dark);
+    } @else {
+      @include set-background($color: shade($color));
+    }
+
+    @if ($border-color) {
+      @include set-border-all(
+        $border: 1px solid $border-color,
+        $radius: $radius
+      );
+    } @else {
+      @include set-border-all($border: 1px solid $color-dark, $radius: $radius);
+    }
+    opacity: 1;
+  }
+}
+
+@mixin set-alt-button(
+  $color: null,
+  $color-dark: null,
+  $background-color: $color-white,
+  $background-dark-color: #f3f3f3,
+  $family: $primary-font,
+  $font-size: 1rem,
+  $font-weight: 600,
+  $transition: 0.2s,
+  $set-border: true,
+  $radius: 4px,
+  $padding: 6px
+) {
+  @include set-background($color: $background-color);
+  display: inline-block;
+  text-align: center;
+  @include set-padding-all($padding);
+
+  @if ($set-border) {
+    @include set-border-all($border: 1px solid $color, $radius: $radius);
+  }
+
+  @include set-font(
+    $family: $family,
+    $size: $font-size,
+    $weight: $font-weight,
+    $color: $color
+  );
+
+  @include set-transition($transition);
+
+  &:hover,
+  &:focus {
+    @if ($color-dark) {
+      @include set-font($color: $color-dark);
+    } @else {
+      @include set-font($color: shade($color));
+    }
+    text-decoration: none;
+
+    @if ($set-border) {
+      @include set-border-all($border: 1px solid $color-dark, $radius: $radius);
+    }
+    @if ($background-dark-color) {
+      @include set-background($color: $background-dark-color);
+    } @else {
+      @include set-background($color: shade($background-color));
+    }
+    opacity: 1;
+  }
+}
+
+@mixin set-ghost-button(
+  $color: null,
+  $family: $primary-font,
+  $font-size: 1rem,
+  $font-weight: 600,
+  $transition: 0.2s,
+  $radius: 4px,
+  $padding: 6px
+) {
+  // @include set-background($color: $color);
+  display: inline-block;
+  text-align: center;
+  @include set-padding-all($padding);
+  @include set-border-all($border: 1px solid $color, $radius: $radius);
+  @include set-font(
+    $family: $family,
+    $size: $font-size,
+    $weight: $font-weight,
+    $color: $color
+  );
+  @include set-transition($transition);
+
+  &:hover,
+  &:focus {
+    @include set-background($color: $color);
+    // @include set-background($color: shade($color));
+    @include set-font($color: $color-white);
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+@mixin set-link(
+  $color: null,
+  $color-dark: null,
+  $cursor: pointer,
+  $text-decoration: none,
+  $opacity: 0.7,
+  $font-size: 1rem,
+  $font-weight: 400,
+  $transition: opacity 0.3s ease-in-out
+) {
+  @include set-font($color: $color);
+  @include set-transition($transition);
+
+  &:hover,
+  &:focus {
+    @if ($color-dark) {
+      @include set-font($color: $color-dark);
+    }
+    cursor: $cursor;
+    text-decoration: $text-decoration;
+    opacity: $opacity;
+  }
+}
+
+@mixin push-auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin line-clamp($numLines: 1, $line-height: 1.412) {
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  display: block;
+  /* autoprefixer: off */
+  display: -webkit-box;
+  -webkit-line-clamp: $numLines;
+  -webkit-box-orient: vertical;
+  max-height: $numLines * $line-height;
+}
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin css-triangle(
+  $color,
+  $direction,
+  $size: 6px,
+  $position: absolute,
+  $round: false
+) {
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+  @if $round {
+    border-radius: 3px;
+  }
+  @if $direction == down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+    margin-top: 0 - round($size / 2.5);
+  } @else if $direction == up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    margin-bottom: 0 - round($size / 2.5);
+  } @else if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    margin-right: -$size;
+  } @else if $direction == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    margin-left: -$size;
+  }
+}
+
+@function tint($color, $percentage: 80%) {
+  @return mix($color-white, $color, $percentage);
+}
+
+@function shade($color, $percentage: 80%) {
+  @return mix($color-black, $color, $percentage);
+}
+// -----------------------------------------------------------------------------
+// This file contains all @mixins declarations, if any.
+// -----------------------------------------------------------------------------
+
+@mixin set-flex(
+  $direction: null,
+  $justify-content: space-between,
+  $align-items: center,
+  $align-self: center
+) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  flex-direction: $direction;
+
+  justify-content: $justify-content;
+
+  -webkit-box-align: $align-items;
+  -moz-box-align: $align-items;
+  -ms-flex-align: $align-items;
+  -webkit-align-items: $align-items;
+  align-items: $align-items;
+
+  -webkit-box-align: $align-self;
+  -moz-box-align: $align-self;
+  -ms-flex-align: $align-self;
+  -webkit-align-self: $align-self;
+  align-self: $align-self;
+}
+
+@mixin set-transition($transition: all 0.5s) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin set-position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

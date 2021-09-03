@@ -1,0 +1,113 @@
+@import "colors";
+@import "mixins";
+
+/*================================
+      MODAL
+  ==================================*/
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: $off-white;
+  background-clip: padding-box;
+  border: 0px;
+  border-radius: 0.3rem;
+  outline: 0;
+  border-radius: 8px;
+  padding: 20px;
+
+  & .modal-header {
+    border-bottom: 0px;
+    padding: 0px;
+    margin-bottom: 30px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .close {
+      border: 0px;
+      outline: 0;
+      background: $form-bg-color;
+      border-radius: 50px;
+      padding: 0px;
+      width: 30px;
+      height: 30px;
+
+      span {
+        color: $primary-color-dark;
+      }
+    }
+  }
+
+  & .modal-body {
+    padding: 0px;
+    margin-bottom: 40px;
+    .close {
+      border: 0px;
+      outline: 0;
+      background: $form-bg-color;
+      border-radius: 50px;
+      padding: 0px;
+      width: 30px;
+      height: 30px;
+
+      span {
+        color: $primary-color-dark;
+      }
+    }
+    .modal-title {
+      max-width: 400px;
+      word-break: break-all;
+
+      & .title {
+        @include set-font($size: 22px, $weight: 500, $color: $text-primary);
+      }
+    }
+  }
+
+  & .modal-footer {
+    width: 100%;
+    flex-wrap: wrap;
+    @include set-flex($justify-content: flex-end, $align-items: center);
+    padding: 0px;
+    border: 0px;
+  }
+}
+
+.form-popup {
+  .modal-content {
+    padding: 30px;
+  }
+}
+
+.modal-90w {
+  max-width: 90%;
+}
+
+
+.modal.show{
+    padding-left: 0px!important;
+}
+
+@media (min-width: 1420px) {
+  .modal-dialog.checklist-modal {
+    max-width: 1050px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-dialog.checklist-modal {
+    max-width: 1250px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-dialog.checklist-modal {
+    height: calc(100vh - 30px);
+    margin: 10px auto;
+  }
+}

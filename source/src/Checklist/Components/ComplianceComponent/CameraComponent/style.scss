@@ -1,0 +1,214 @@
+@import "../../../../Sass/variables";
+
+.steps-block{
+    margin-top: 30px;
+    .progressbar {
+        margin-bottom: 30px;
+        overflow: hidden;
+        counter-reset: step;
+        display: flex;
+        align-items: center;
+    li {
+        list-style-type: none;
+        color: $text-primary;
+        text-transform: capitalize;
+        padding-right: 100px;
+        float: left;
+        position: relative;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        &:before {
+                content: counter(step);
+                counter-increment: step;
+                width: 24px;
+                height: 24px;
+                line-height: 26px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                color: $pure-white;
+                background: #A0A0A0;
+                border-radius: 50px;
+                margin-right: 10px;
+            }
+        &:after {
+                content: '';
+                width: 30%;
+                height: 2px;
+                border-radius: 50px;
+                background: #A0A0A0;
+                position: absolute;
+                left: -40%;
+                top: 11px;
+                z-index: -1;
+                bottom: 0px;
+                }
+            &:first-child:after {
+                content: none;
+            }
+            &.active:before{
+                background-color: $primary-color;
+            }
+            &.isCompleted:before{
+                line-height: 0;
+                background-color: $primary-color;
+                content: url('edit.svg');
+            }
+            &.active{
+                a{
+                    color: $primary-color;
+                }
+            }
+            a   {
+                color: $text-primary;
+            }
+        }
+    }
+}
+
+.info-content{
+    margin-top: 50px;
+    p{
+        font-weight: 500;
+        a{
+            color: $text-primary;
+            text-decoration: underline;
+        }
+    }
+}
+
+.location-block{
+    margin-top: 10px;
+    li{
+        .selected-block {
+            padding: 10px;
+            border-radius: 6px;
+            background-color: $pure-white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            box-shadow: 0px 1px 3px 0px #b5aeae;
+
+        .action {
+            position: relative;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: none;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-left: 20px;
+            cursor: pointer;
+            @include set-transition(all 0.3s);
+            color: $red-failure;
+            background-color: $tag-warning-bg;
+
+            &:hover {
+            background-color: $form-bg-color
+            }
+
+            svg {
+            cursor: pointer;
+            width: 16px;
+            height: auto;
+
+            path {
+                fill: $red-failure;
+            }
+            }
+        }
+        }
+    }
+}
+
+// Add Roi
+.container-block {
+    display: flex;
+    justify-content: space-between;
+    .canvas-block {
+        .canvas-view {
+            //max-height: 350px;
+            //max-width: 680px;
+            overflow: auto;
+        }
+    }
+    .control-block{
+        ul{
+            li{
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+// ROI Buttons
+.gray-light-btn{
+    background: rgba(0, 0, 0, 0.2);
+    svg{
+        path{
+            fill: $pure-black;
+        }
+    }
+    &:hover{
+        background: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Screen Size - 375px */
+@media (max-width: 1300px) {
+.steps-block{
+    .progressbar {
+        li {
+            padding-right: 30px;
+            &:after {
+                content: '';
+                width: 10%;
+                height: 2px;
+                border-radius: 50px;
+                background: #A0A0A0;
+                position: absolute;
+                left: -20%;
+                top: 11px;
+                z-index: -1;
+                bottom: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 642px) {
+.steps-block{
+    .progressbar {
+        display: block;
+        columns: 2;
+        li {
+            margin-bottom: 20px;
+            width: 100%;
+            padding-right: 0px;
+            &:after {
+                content: none;
+                    }
+            }
+        }
+    }
+}
+
+/* Screen Size - 425px */
+@media (max-width: 425px) {
+.location-block{
+        li{
+        width: 100%;
+        }
+    }
+}

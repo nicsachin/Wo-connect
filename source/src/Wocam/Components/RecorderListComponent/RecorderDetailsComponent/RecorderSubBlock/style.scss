@@ -1,0 +1,113 @@
+@import "../../../../../Sass/variables";
+.element-block.padding-sm-20{
+    @include set-padding-all(8px);
+    @include set-flex($align-items: flex-start);
+
+            .element-img{
+                float: left;
+                @include set-margin($right: 20px);
+                @include set-dimensions($width: 40%, $max-width: 180px);
+
+                img {
+                @include set-border($radius:4px);
+            }
+        }
+        .element-content {
+            flex: 1;
+            margin: 0 0 0 auto;
+
+            .header-block{
+                @include set-flex($justify-content: space-between, $align-items: center);
+                .title {
+                    @include set-margin($bottom: 4px);
+                    @include set-font($size:16px, $weight: 600, $color: $text-primary);
+                }
+
+                svg {
+                    width: 24px;
+                    height: auto;
+                    path {
+                        fill: $text-other;
+                        fill-opacity: 1;
+                    }
+                    
+                }
+                &:hover {
+                    .title{
+                        color: $heading-primary;                        
+                    }
+                    svg {
+                        path {
+                            fill: $text-primary;
+                        }
+                    }
+                }
+            }
+
+            .title {
+                @include set-font($size: 12px, $color: $text-other);
+                @include set-margin($top: 4px, $bottom: 0);
+            }
+            .element-bottom {
+                @include set-margin($top: 10px, $bottom:5px);
+
+                @include set-flex($justify-content: space-between, $align-items: center);
+
+                .copy-link {
+                    p {
+                        @include set-font($color: $text-primary, $size: 12px);
+
+                        span svg path {
+                            fill: $text-primary;
+                        }
+                    }
+
+                    &:hover {
+                        p {
+                            @include set-font($color: $heading-primary);
+
+                            span svg path {
+                                fill: $heading-primary;
+                            }
+                        }
+                    }
+                }
+
+                .tag-block {
+                    @include set-font($size: 12px);
+                    @include set-padding(4px, 6px, 4px, 6px);
+                    @include set-background($color: $gray);
+                    @include set-margin($right: 0px);
+                    &:hover {
+                        @include set-background($color: $tag-color);
+                        cursor: pointer;
+                    }
+                }
+            }  
+        }
+
+   
+}
+
+.element-content{
+    .status-text{
+        @include set-flex($justify-content: flex-start);
+        @include set-font($size: 12px, $color: $text-other);
+        @include set-margin($bottom: 5px);
+    }
+}
+
+
+/* Screen Size - 592px */
+@media (max-width: 1625px) {
+    .element-block.padding-sm-20{
+        .element-content {
+            .element-bottom{
+                display: block;
+                .copy-link{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+} 
