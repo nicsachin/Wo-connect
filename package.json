@@ -1,6 +1,6 @@
 {
   "name": "Wo-connect",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Wo-connect is a utility tool by Wobot to easily connect your existing cameras from your local network.",
   "author": "Sachin <sachinfromwobot@gmail.com>",
   "homepage": "./",
@@ -27,6 +27,31 @@
     "uuid": "^8.3.2"
   },
   "build": {
+
+    "appId": "com.woconnect",
+    "productName": "Wo-connect",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "sachinfromwobot",
+        "repo": "Wo-connect"
+      }
+    ],
+    "win": {
+      "publish": [
+        "github"
+      ],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+
     "asarUnpack": [
       "node_modules/ffmpeg-ffprobe-static/bin/${os}/${arch}/ffmpeg",
       "node_modules/ffmpeg-ffprobe-static/bin/${os}/${arch}/ffprobe",
