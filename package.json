@@ -1,10 +1,10 @@
 {
   "name": "Wo-connect",
-  "version": "1.1.1",
+  "version": "1.0.1",
   "description": "Wo-connect is a utility tool by Wobot to easily connect your existing cameras from your local network.",
   "author": "Sachin <sachinfromwobot@gmail.com>",
   "homepage": "./",
-  "repository" : "git@github.com:sachinfromwobot/Wo-connect.git",
+  "repository": "https://github.com/sachinfromwobot/Wo-connect.git",
   "main": "index.js",
   "scripts": {
     "dev": "cd source && npm start",
@@ -12,46 +12,30 @@
     "build": "electron-builder --linux deb -w",
     "linux": "electron-builder --linux deb",
     "windows": "electron-builder -w",
-    "watch": "nodemon --watch . --exec \"electron .\"" ,
-    "pack" : "electron-builder --dir",
-    "gh-publish" : "electron-builder  -w -p always"
+    "watch": "nodemon --watch . --exec \"electron .\"",
+    "pack": "electron-builder --dir",
+    "gh-publish": "electron-builder  -w -p always"
   },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
     "electron-is-dev": "^2.0.0",
+    "electron-log": "^4.4.1",
+    "electron-updater": "^4.3.9",
     "ffmpeg": "0.0.4",
     "ffmpeg-ffprobe-static": "^4.3.1-rc.6",
     "fluent-ffmpeg": "^2.1.2",
     "uuid": "^8.3.2"
   },
   "build": {
-
-    "appId": "com.woconnect",
+    "appId": "com.wobot.woconnect",
     "productName": "Wo-connect",
     "publish": [
       {
-        "provider": "github",
-        "owner": "sachinfromwobot",
-        "repo": "Wo-connect"
+        "provider": "github"
       }
     ],
-    "win": {
-      "publish": [
-        "github"
-      ],
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
-      ]
-    },
-
     "asarUnpack": [
       "node_modules/ffmpeg-ffprobe-static/bin/${os}/${arch}/ffmpeg",
       "node_modules/ffmpeg-ffprobe-static/bin/${os}/${arch}/ffprobe",

@@ -1,5 +1,5 @@
 const axios = require('axios');
-
+const updater = require("./utils/Updater.js")
 const { app, BrowserWindow } = require('electron')
 const isDev = require("electron-is-dev");
 const ipc = require("electron").ipcMain;
@@ -9,6 +9,7 @@ const Service = require("./utils/Service");
 const uuid = require("uuid");
 let ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
+const {autoUpdater} = require('./utils/Updater.js');
 
 let ffmpegPath = require('ffmpeg-ffprobe-static').ffmpegPath.replace('app.asar', 'app.asar.unpacked');
 let ffprobePath = require('ffmpeg-ffprobe-static').ffprobePath.replace('app.asar', 'app.asar.unpacked');
@@ -17,42 +18,44 @@ let ffprobePath = require('ffmpeg-ffprobe-static').ffprobePath.replace('app.asar
 ipc.on("install" , (event)=>{
 
 
-    let image = fs.readFileSync(path.join(__dirname , `/public/test.jpeg` )).toString('base64')
-    // console.log("image" , image)
+    // let image = fs.readFileSync(path.join(__dirname , `/public/test.jpeg` )).toString('base64')
+    // // console.log("image" , image)
 
-    let tag = `data:image/png;base64,${image}`;
+    // let tag = `data:image/png;base64,${image}`;
 
-    event.sender.send("response" , tag);
+    // event.sender.send("response" , tag);
 
-    //
-    //
-    // let env = {
-    //     RTSP_API : "yes"
-    // }
-    //
-    // // let temp_path = "C:\\Users\\Wobot\\AppData\\Local\\Programs\\Wo-connect\\resources\\rtsp-simple-server\\Windows\\rtsp-simple-server.exe";
+    
+    
+    let env = {
+        RTSP_API : "yes"
+    }
+    
+    // let temp_path = "C:\\Users\\Wobot\\AppData\\Local\\Programs\\Wo-connect\\resources\\rtsp-simple-server\\Windows\\rtsp-simple-server.exe";
     // let applicationPath  = path.join(app.getAppPath().replace("app.asar" , "rtsp-simple-server") , "\Windows\\rtsp-simple-server.exe")
-    // event.sender.send("response",{applicationPath})
-    //
-    //
-    // let RTSP_SERVER_PATH_ENDPOINT = "http://localhost:9997/v1/paths/list"
-    // //check if rtsp server is installed or not
-    //
-    //     axios.get(RTSP_SERVER_PATH_ENDPOINT)
-    //         .then(function (response) {
-    //             console.log("inside then block")
-    //
-    //                     //runs when rtsp server is running
-    //          })
-    //         .catch(function (error) {
-    //             Service.runProcess(applicationPath , {detached : true , env});
-    //             console.log("inside catch block");
-    //             // Service.install(applicationPath);
-    //             // console.log(error)
-    //             event.sender.send("response", {"error": error})
-    //         })
-    //
-    //
+    let applicationPath = "C:\\Users\\azureuser\\AppData\\Local\\Programs\\Wo-connect\\resources\\rtsp-simple-server\\Windows\\rtsp-simple-server.exe";
+  
+    event.sender.send("response",{applicationPath})
+    
+    
+    let RTSP_SERVER_PATH_ENDPOINT = "http://localhost:9997/v1/paths/list"
+    //check if rtsp server is installed or not
+    
+        axios.get(RTSP_SERVER_PATH_ENDPOINT)
+            .then(function (response) {
+                console.log("inside then block")
+    
+                        //runs when rtsp server is running
+             })
+            .catch(function (error) {
+                Service.runProcess(applicationPath , {detached : true , env});
+                console.log("inside catch block");
+                // Service.install(applicationPath);
+                // console.log(error)
+                event.sender.send("response", {"error": error})
+            })
+    
+    
 
 
 })
@@ -168,6 +171,11 @@ ipc.on("codec" , (event , val)=>{
 
 function createWindow () {
 
+
+    //check for updates
+        
+    autoUpdater.checkForUpdates()
+    
     const mainWindow = new BrowserWindow({
         height : 800,
         width : 800,
