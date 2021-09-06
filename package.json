@@ -33,7 +33,11 @@
     "productName": "Wo-connect",
     "publish": [
       {
-        "provider": "github"
+        "provider": "github",
+        "repo": "https://github.com/sachinfromwobot/Wo-connect.git",
+        "GH_TOKEN": "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",
+        "private": true,
+        "owner": "sachinfromwobot"
       }
     ],
     "asarUnpack": [
