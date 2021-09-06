@@ -1,6 +1,5 @@
 const axios = require('axios');
-const updater = require("./utils/Updater.js")
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, autoUpdater, dialog } = require('electron')
 const isDev = require("electron-is-dev");
 const ipc = require("electron").ipcMain;
 const path = require("path");
@@ -9,7 +8,7 @@ const Service = require("./utils/Service");
 const uuid = require("uuid");
 let ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
-const Updater = require('./utils/Updater.js');
+const updater = require('./utils/Updater.js');
 
 let ffmpegPath = require('ffmpeg-ffprobe-static').ffmpegPath.replace('app.asar', 'app.asar.unpacked');
 let ffprobePath = require('ffmpeg-ffprobe-static').ffprobePath.replace('app.asar', 'app.asar.unpacked');
@@ -171,6 +170,14 @@ ipc.on("codec" , (event , val)=>{
 
 function createWindow () {
 
+
+
+
+
+
+    //check for updates
+        
+    setTimeout(updater , 1500);
 
     
     const mainWindow = new BrowserWindow({
